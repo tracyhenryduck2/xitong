@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources	xmlns="http://gdk.com/db" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://gdk.com/db/gdk-db-2.0.xsd">
+	<datasource>
+		<name>write</name>
+		<driver-class>com.mysql.jdbc.Driver</driver-class>
+		<!-- 
+		<driver-url>jdbc:mysql://oa.zhetian.net:3306/oa?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;failOverReadOnly=false</driver-url>
+		<user>root</user>
+		<password>zhetian@12378900</password>
+		 --> 
+		 
+		<driver-url>jdbc:mysql://192.168.1.18:3306/point?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;failOverReadOnly=false</driver-url>
+		<user>root</user>
+		<password>123456</password>
+		<!--
+		 <driver-url>jdbc:mysql://zed1.cn:3306/weixin?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;failOverReadOnly=false</driver-url>
+		<user>root</user>
+		<password>zhouxinfyy0</password>
+		-->  
+		<show-sql>true</show-sql>
+		<!-- 连接池中允许创建的最大的数据库物理连接数量，默认 100 -->
+		<max-connection-size>100</max-connection-size>
+		<!-- 
+			连接池中保持的最小数据库物理连接数量，默认 2；
+			建议该值 = init-connection-size
+		-->
+		<min-connection-size>2</min-connection-size>
+		<!-- 连接池生成时初始化的数据库物理连接数量，默认 2 -->
+		<init-connection-size>2</init-connection-size>
+		<!-- 每当连接池中存在的连接数耗尽时，允许一次性创建的物理连接数量，默认 2 -->
+		<acquire-increment-size>2</acquire-increment-size>
+		<!-- 
+		连接池中始终保持可用的物理连接数量，默认2
+		注：
+		可用连接指处于空闲状态的连接
+		-->
+		<available-connection-size>2</available-connection-size>
+		<!-- 
+		连接池中空闲连接最大的生存时间，默认 3600 秒，单位：s
+		如果某些空闲连接的存活时间大于这里配置的数值，则这些空闲连接将被真正地从数据库上关闭。
+		-->
+		<max-connection-idletime>36000</max-connection-idletime>
+	
+		<!-- 
+		数据库活动连接的最大生命周期，默认 14400 秒，单位：s
+		如果一个数据库连接始终处于活动状态，且时间超过这里设定的数值，则立刻kill掉这个连接。
+		注：
+		活动连接指应用程序从连接池中获取的一个连接。
+		-->
+		<max-connection-lifetime>14400</max-connection-lifetime>
+	
+		<!-- 
+		空闲数据库连接检测周期，用于定时检测连接池中的空闲数据库连接是否已经超期(max-connection-idletime定义了最大空闲时间)，并进行清理。
+		单位：秒， 默认：0
+		注：
+		如果数值 <=0 则不进行定时检测。
+		-->
+		<idle-connection-test-period>0</idle-connection-test-period>
+	
+		<!-- 
+		从连接池中获取连接失败后重试的次数，默认 10 次。
+		注：
+		如果数值 <=0 则不重试。
+		-->
+		<acquire-retry-attempts>10</acquire-retry-attempts>
+	
+		<!-- 
+		从连接池中获取连接失败后的每次重试间隔时间，单位 毫秒(ms)，默认 1000 ms。
+		注：
+		与acquire-retry-attempts结合使用，如果数值 <=0 则不重试。
+		-->
+		<acquire-retry-delay>1000</acquire-retry-delay>
+		<!-- 
+		定义一个测试的SQL语句，用来在取出数据库连接、归还数据库连接 和 空闲连接有效性检查 时测试连接的有效性。 默认：空
+		注：
+		该SQL语句应该被快速的执行，否则会造成程序性能问题； 建议 MySQL 使用 SELECT 1 或 SELECT NOW()， Oracle 使用 SELECT 1 FROM dual。
+		如果为空，则不进行数据库连接有效性测试。
+		该配置和下面的 test-connection-checkout, test-connection-checkin 结合使用，
+		如果 test-connection-checkout 和 test-connection-checkin 都配置为 false 的话，则 test-sql 配置无效。
+		-->
+		<test-sql></test-sql>
+		<!-- 
+		当从连接池中取出数据库连接时(被使用之前)，自动执行 test-sql 测试其有效性。默认：false
+		注：
+		与test-sql结合使用。
+		如果打开(配置 true)的话，由于获取的每个数据库连接都要测试有效性，会造成性能上的一点损伤，请酌情使用。
+		-->
+		<test-connection-checkout>false</test-connection-checkout>
+		<!-- 
+		当数据库连接用完后在送回连接池之前，自动执行 test-sql 测试其有效性。默认：false
+		注：
+		与test-sql结合使用。
+		如果打开(配置 true)的话，由于每次归还数据库连接都要测试有效性，会造成性能上的一点损伤，请酌情使用。
+		-->
+		<test-connection-checkin>false</test-connection-checkin>
+		<!-- 
+		驱动程序试图连接到某一数据库时的最长等待时间，默认 5 秒， 单位：s
+		注： 
+		1. 仅用在通过DriverManager获取connection时；
+		2. 数值根据实际的网络情况设置。
+		-->
+		<connection-timeout>5</connection-timeout>
+		<!-- 当WEB容器启动时或应用程序首次调用时是否立刻创建该数据库连接池，默认 false，值： true | false -->
+		<load-on-startup>false</load-on-startup>
+		<!-- 
+			是否在控制台打印执行的SQL语句，默认 false, 值： true | false
+			注：
+			一般在调试程序时打开。
+		-->
+	</datasource>
+</datasources>

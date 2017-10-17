@@ -1,0 +1,7 @@
+.searchresult{ position:absolute;
+z-index:1000; overflow:hidden; border:#c5dadb 1px solid;
+border-top:none;background:#FFFFFF;
+}
+.line{font-size:12px;height:20px; padding:2px;color:#2861A3}
+.hover{background:#EBEBEB;color:#000000;}
+.std{padding-left:4px;border:0px;height:20px;}

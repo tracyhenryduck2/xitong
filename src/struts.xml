@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!--<constant name="struts.devMode" value="false" />   -->
+	<constant name="struts.action.excludePattern" value="/message"></constant>
+	<include file="/config/common-struts.xml"></include>
+	<include file="/config/system-struts.xml"></include>
+	<include file="/config/member-struts.xml"></include>
+	<include file="/config/siter-app-struts.xml"></include>
+	<include file="/config/install-struts.xml"></include>
+</struts>

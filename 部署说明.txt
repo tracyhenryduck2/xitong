@@ -1,0 +1,1 @@
+部署好以后需要在tomcat的项目里删除4个jar包：tomcat-coyote.jar,catalina.jar,javax.servlet.jsp_2.0.0.v200706191603.jar,javax.servlet_2.4.0.v200706111738.jar

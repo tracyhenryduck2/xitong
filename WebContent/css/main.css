@@ -1,0 +1,19 @@
+/*数据列表样式*/
+.dataGrid1{font-size:13px;background-color:#fff;border:1px solid #EDEDED;border-right:0px;border-bottom:0px;border-collapse:collapse;empty-cell:show;}
+.dataGrid1 thead tr{background:#E8EAEA url(../images/ico/grid_head.gif) repeat-x 0 0;}
+.dataGrid1 thead th{white-space:nowrap;overflow:hidden;font-weight:normal;color:#000;height:24px;border-left:1px solid #fefefe;border-right:1px solid #E0E0E0;cursor:pointer;}
+.dataGrid1 thead th.currSort{background:url(../images/ico/grid_head.gif) repeat-x 0 -24px;border-right:1px solid #B7D7FC;}
+.dataGrid1 thead th div{display:block;text-align:left;height:100%;zoom:1;font-size:13px;line-height:24px;padding-left:5px;padding-right:16px;white-space:nowrap;overflow:hidden;}
+.dataGrid1 thead th div.asc{background:url(../images/ico/sort_asc.gif) no-repeat right 50%;}
+.dataGrid1 thead th div.desc{background:url(../images/ico/sort_desc.gif) no-repeat right 50%;}
+
+.dataGrid1 tbody tr.odd{background-color:#FAFAFA;}
+.dataGrid1 tbody tr td{height:25px;word-break:break-all;padding:2px 5px;border-top:1px solid #fff;border-bottom:1px solid #EDEDED;border-right:1px solid #EDEDED;}
+.dataGrid1 tbody tr.highlight{background-color:#E4F2FF;}
+.dataGrid1 tbody tr.highlight td{border-bottom:1px dashed #B7D7FC;}
+.dataGrid1 tbody tr.highlight td.sortCell{background-color:#E4F2FF;}
+.dataGrid1 tbody tr.selected{background-color:#B0BFC6;}
+.dataGrid1 tbody tr.selected td{border-bottom:1px solid #EDEDED;color:#ffffff;}
+.dataGrid1 tbody tr.selected td.sortCell{background-color:#B0BFC6;/*color:#6190CD;*/}
+/*.dataGrid1 tbody td a:hover{color:#0000ff;text-decoration:underline;}*/
+.dataGrid1 tbody td.sortCell{background-color:#F2F2F2;border-right:1px solid #B7D7FC;}

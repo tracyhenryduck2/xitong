@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.multipart.maxSize" value="1073741824"/>
+   <!-- <constant name="struts.enable.DynamicMethodInvocation" value="false" /> -->
+   <!--  <constant name="struts.devMode" value="false" /> -->
+   
+   <package name="install" extends="struts-default" namespace="/install/action">
+		<action name="InstallAction" class="com.install.action.InstallAction">
+			<result name="search">/install/install_search.jsp</result>
+			<result name="list">/install/install_list.jsp</result>
+		</action>
+		<action name="InspectorAction" class="com.install.action.InspectorAction" >
+			<result name="search">/install/main.jsp</result>
+			<result name="list">/install/inspector_list.jsp</result>
+		</action>
+		<action name="ProductAction" class="com.install.action.ProductAction" >
+		</action>
+		<action name="PicUploadAction" class="com.install.action.PicUploadAction">
+			
+		</action>
+	
+	</package>
+		
+</struts>
+		

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.multipart.maxSize" value="1073741824"/>
+   <!-- <constant name="struts.enable.DynamicMethodInvocation" value="false" /> -->
+   <!--  <constant name="struts.devMode" value="false" /> -->
+   <package name="member" extends="login.interceptor"
+		namespace="/memberManage">
+		<action name="Member" class="com.memberManage.action.MemberAction">
+			 		<result name="toAddMember">/memberManage/member_edit.jsp</result>
+			 		<result name="list">/memberManage/member_list.jsp</result>
+			 		<result name="search">/memberManage/member_search.jsp</result>
+		</action>
+        
+        <action name="ChargeLog" class="com.memberManage.action.ChargeLogAction">
+	 		<result name="list">/memberManage/chargeLog_list.jsp</result>
+	 		<result name="search">/memberManage/chargeLog_search.jsp</result>
+        </action>
+        
+        <action name="FeeLog" class="com.memberManage.action.FeeLogAction">
+	 		<result name="list">/memberManage/feeLog_list.jsp</result>
+	 		<result name="search">/memberManage/feeLog_search.jsp</result>
+       </action>
+       
+       
+       <!-- 后台反馈平台 -->
+       <action name="QuestionLog" class="com.memberManage.action.QuestionLogAction">
+	 		<result name="toAddQuestionLog">/memberManage/questionLog_edit.jsp</result>
+	 		<result name="list">/memberManage/questionLog_list.jsp</result>
+	 		<result name="search">/memberManage/questionLog_search.jsp</result>
+       </action>
+	</package>
+		
+</struts>

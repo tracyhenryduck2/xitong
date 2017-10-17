@@ -1,0 +1,13 @@
+/* 数据表格 */
+.dataGrid{font-size:12px;background-color:#ffffff;color:#15428B;}
+.dataGrid thead tr{background:url(../images/tbg.gif) repeat-x left top;}
+.dataGrid thead th{white-space:nowrap;text-align:left;height:24px;border-left:1px solid #bccbdd;border-bottom:1px solid #bccbdd;cursor:pointer;padding-left:2px;}
+.dataGrid thead th div{width:100%;padding-right:0px;background:url(../images/sort.gif) no-repeat right;}
+.dataGrid thead th div.asc{padding-right:16px;background:url(../images/sort_asc.gif) no-repeat right;}
+.dataGrid thead th div.desc{padding-right:16px;background:url(../images/sort_desc.gif) no-repeat right;}
+.dataGrid thead th.currentSort{background:url(../images/tbgSort.gif) repeat-x left top;}
+.dataGrid tbody td{padding:2px 0px 2px 2px;border-left:1px solid #bccbdd;}
+.dataGrid tbody td a:hover{color:#0000ff;text-decoration:underline;}
+.dataGrid tbody tr.odd{background-color:#e6f0f9;}
+.dataGrid tbody tr.highlight{background-color:#FFBD4C;}
+.dataGrid tbody tr.selected{background-color:#8FAED5;color:#ffffff;}
