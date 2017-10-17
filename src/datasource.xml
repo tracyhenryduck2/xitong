@@ -10,9 +10,9 @@
 		<password>zhetian@12378900</password>
 		 --> 
 		 
-		<driver-url>jdbc:mysql://192.168.1.18:3306/point?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;failOverReadOnly=false</driver-url>
+		<driver-url>jdbc:mysql://127.0.0.1:3306/point?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;failOverReadOnly=false</driver-url>
 		<user>root</user>
-		<password>123456</password>
+		<password></password>
 		<!--
 		 <driver-url>jdbc:mysql://zed1.cn:3306/weixin?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;failOverReadOnly=false</driver-url>
 		<user>root</user>

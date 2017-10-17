@@ -32,6 +32,12 @@
 	 		<result name="list">/memberManage/questionLog_list.jsp</result>
 	 		<result name="search">/memberManage/questionLog_search.jsp</result>
        </action>
+       
+       <action name="Client" class="com.memberManage.action.ClientAction">
+	 		<result name="toAddClient">/memberManage/client_edit.jsp</result>
+	 		<result name="list">/memberManage/client_list.jsp</result>
+	 		<result name="search">/memberManage/client_search.jsp</result>
+</action>
 	</package>
 		
 </struts>
