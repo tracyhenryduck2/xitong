@@ -6,6 +6,7 @@
 <struts>
 	<!--<constant name="struts.devMode" value="false" />   -->
 	<constant name="struts.action.excludePattern" value="/message"></constant>
+	<constant name="struts.action.excludePattern" value="/phone"></constant>
 	<include file="/config/common-struts.xml"></include>
 	<include file="/config/system-struts.xml"></include>
 	<include file="/config/member-struts.xml"></include>

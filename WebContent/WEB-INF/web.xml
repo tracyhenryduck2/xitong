@@ -19,16 +19,24 @@
     <servlet-name>websocketServlet</servlet-name>
     <servlet-class>com.websocket.WebSocketMessageServlet</servlet-class>
   </servlet>
-  
-  <servlet-mapping>
+  <servlet>
+    <servlet-name>websocketAppServlet</servlet-name>
+    <servlet-class>com.websocket.WebSocketAppMessageServlet</servlet-class>
+  </servlet>
+    <servlet-mapping>
      <servlet-name>websocketServlet</servlet-name>
      <url-pattern>/message</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+     <servlet-name>websocketAppServlet</servlet-name>
+     <url-pattern>/phone</url-pattern>
+  </servlet-mapping>  
+  
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
   <session-config>
-    <session-timeout>1</session-timeout>
+    <session-timeout>60</session-timeout>
   </session-config>
   <listener>
     <listener-class>com.server.socketserver.AttendSocetListener</listener-class>
