@@ -23,7 +23,7 @@ String path = request.getContextPath();
 			Dialog.error(message);				      
 		} else if (messageType == "reload_success") {   
 			Dialog.alert(message,function(){    
-				Dialog.opener().location.reload(); //;= "<%=path%>/memberManage/Member!list.action";   
+				Dialog.opener().location.reload(); //;= "<%=path%>/memberManage/ClientToken!list.action";   
 				parentDialog.close();             
 			});                                 
 		} else if(messageType == "exception") { 
@@ -35,27 +35,27 @@ String path = request.getContextPath();
 		/* form1表单进行验证 */               
 		$("#form1").validate({              
 			rules:{                             
-			    "memberBean.hekrid":{            
-			        CNRangeLength:[0,45]
-			    },                              
-			    "memberBean.sex":{            
+			    "clientTokenBean.clientId":{            
 			        required : true,number:true,range:[0,9999999999]
 			    },                              
-			    "memberBean.phone":{            
-			        CNRangeLength:[0,45]
+			    "clientTokenBean.accessToken":{            
+			        required : true,CNRangeLength:[0,512]
 			    },                              
-			    "memberBean.username":{            
-			        CNRangeLength:[0,255]
+			    "clientTokenBean.refreshToken":{            
+			        required : true,CNRangeLength:[0,512]
 			    },                              
-			    "memberBean.email":{            
-			        CNRangeLength:[0,11]
+			    "clientTokenBean.expiresIn":{            
+			        required : true,number:true,range:[0,9999999999]
 			    },                              
-			    "memberBean.ctime":{            
-			        number:true,range:[0,9999999999]
+			    "clientTokenBean.expiresInRefresh":{            
+			        required : true,number:true,range:[0,9999999999]
+			    },                              
+			    "clientTokenBean.time":{            
+			        required : true,number:true,range:[0,9999999999]
 			    }                              
 			},                                  
 			messages:{                          
-//			    "memberBean.code":{          
+//			    "clientTokenBean.code":{          
 //				    required : "",CNRangeLength:""  
 //			    },                            
 			}                                   
@@ -66,56 +66,56 @@ String path = request.getContextPath();
 </script>                                
 </head>                                  
 <body>                                   
-<form name="form1" id="form1" action="<%=path %>/memberManage/Member!addMember.action" method="post" target="fram" >   
+<form name="form1" id="form1" action="<%=path %>/memberManage/ClientToken!addClientToken.action" method="post" target="fram" >   
 <input type="hidden" name="oper" value="${oper}" />
-<input type="hidden" name="memberBean.id" id="id" value="${memberBean.id }"/>  
+<input type="hidden" name="clientTokenBean.id" id="id" value="${clientTokenBean.id }"/>  
 <table cellpadding="0" cellspacing="0" width="100%" class="GF-grid"> 
   <tr>                                    
     	<td align="right" width="30%" > 
-                            hekrid<span class="mark"></span>   
+                            clientid<span class="mark">*</span>   
         </td>                            
         <td>                             
-            <input type="text" name="memberBean.hekrid" id="hekrid"  value="${memberBean.hekrid}" class="GF-field"/>   
+            <s:select list="#request.clientList"  cssClass="GF-field" name="clientTokenBean.clientId" id="clientId"   theme="simple" listKey="id" listValue="name"  value="#request.clientTokenBean.clientId" ></s:select>
         </td>                            
   </tr>                                
   <tr>                                    
     	<td align="right" > 
-                            性别<span class="mark">*</span>   
+                            操作令牌<span class="mark">*</span>   
         </td>                            
         <td>                             
-            <input type="text" name="memberBean.sex" id="sex"  value="${memberBean.sex}" class="GF-field"/>   
+            <input type="text" name="clientTokenBean.accessToken" id="accessToken"  value="${clientTokenBean.accessToken}" class="GF-field"/>   
         </td>                            
   </tr>                                
   <tr>                                    
     	<td align="right" > 
-                            手机<span class="mark"></span>   
+                            刷新令牌<span class="mark">*</span>   
         </td>                            
         <td>                             
-            <input type="text" name="memberBean.phone" id="phone"  value="${memberBean.phone}" class="GF-field"/>   
+            <input type="text" name="clientTokenBean.refreshToken" id="refreshToken"  value="${clientTokenBean.refreshToken}" class="GF-field"/>   
         </td>                            
   </tr>                                
   <tr>                                    
     	<td align="right" > 
-                            姓名<span class="mark"></span>   
+                            过期时间（单位:秒）<span class="mark">*</span>   
         </td>                            
         <td>                             
-            <input type="text" name="memberBean.username" id="username"  value="${memberBean.username}" class="GF-field"/>   
+            <input type="text" name="clientTokenBean.expiresIn" id="expiresIn"  value="${clientTokenBean.expiresIn}" class="GF-field"/>   
         </td>                            
   </tr>                                
   <tr>                                    
     	<td align="right" > 
-                            邮箱<span class="mark"></span>   
+                            刷新令牌过期时间(单位:秒)<span class="mark">*</span>   
         </td>                            
         <td>                             
-            <input type="text" name="memberBean.email" id="email"  value="${memberBean.email}" class="GF-field"/>   
+            <input type="text" name="clientTokenBean.expiresInRefresh" id="expiresInRefresh"  value="${clientTokenBean.expiresInRefresh}" class="GF-field"/>   
         </td>                            
   </tr>                                
   <tr>                                    
     	<td align="right" > 
-                            绑定此平台时间<span class="mark"></span>   
+                            时间<span class="mark">*</span>   
         </td>                            
         <td>                             
-            <input type="text" name="memberBean.ctime" id="ctime"  value="${memberBean.ctime}" class="GF-field"/>   
+            <input type="text" name="clientTokenBean.time" id="time"  value="${clientTokenBean.time}" class="GF-field"/>   
         </td>                            
   </tr>                                
   <tr>                                

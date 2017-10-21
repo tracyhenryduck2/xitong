@@ -2,5 +2,5 @@ package com.template;
 
 public class Static {
 
-	public static String author = "xin.chou";
+	public static String author = "junjun.xue";
 }

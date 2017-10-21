@@ -7,7 +7,7 @@ String path = request.getContextPath();
 <html>    
   <head>  
    
-    <title>客户管理</title> 
+    <title>令牌表</title> 
 	<meta http-equiv="pragma" content="no-cache">  
 	<meta http-equiv="cache-control" content="no-cache">  
 	<meta http-equiv="expires" content="0"> 
@@ -15,21 +15,21 @@ String path = request.getContextPath();
 	<meta http-equiv="description" content="This is my page">    
 	<script type="text/javascript">    
 		function add(){      
-			Dialog.open({Title:"新增", Width:600, Height:360, URL:"<%=path%>/memberManage/Member!toAddMember.action"});   
+			Dialog.open({Title:"新增", Width:600, Height:360, URL:"<%=path%>/memberManage/ClientToken!toAddClientToken.action"});   
 		}      
 		function mod(){      
 			var id = getCheckRowValue();     
 			if(id==null) {     
 				return;   
 			}    
-			Dialog.open({Title:"编辑", Width:600, Height:360, URL:"<%=path%>/memberManage/Member!toAddMember.action?oper=1&memberBean.id="+id});
+			Dialog.open({Title:"编辑", Width:600, Height:360, URL:"<%=path%>/memberManage/ClientToken!toAddClientToken.action?oper=1&clientTokenBean.id="+id});
 		}      
 		function detail(){   
 			var id = getCheckRowValue();     
 			if(id==null) {     
 				return;   
 			}    
-			Dialog.open({Title:"详情", Width:500, Height:360, URL:"<%=path%>/memberManage/Member!toAddMember.action?read=1&oper=1&memberBean.id="+id});    
+			Dialog.open({Title:"详情", Width:500, Height:360, URL:"<%=path%>/memberManage/ClientToken!toAddClientToken.action?read=1&oper=1&clientTokenBean.id="+id});    
 		}      
 		function del(){      
 			if(!isCheckAny("idArr")){      
@@ -38,7 +38,7 @@ String path = request.getContextPath();
 			}    
 			Dialog.confirm("确定删除吗", function(){     
 				var action_tmp = form1.action; 
-				form1.action = "<%=path%>/memberManage/Member!delMembers.action";
+				form1.action = "<%=path%>/memberManage/ClientToken!delClientTokens.action";
 				form1.target = "fram";
 				form1.submit();  
 				form1.action = action_tmp;     
@@ -58,13 +58,13 @@ String path = request.getContextPath();
 			}    
 		}      
 		function search() {  
-			Dialog.open({Title:"查询", Width:650, Height:220, URL:"<%=path%>/memberManage/Member!search.action",OnLoad:function(){
-			     this.innerDoc.getElementById("hekrid").value = $("#hekrid").val();
-			     this.innerDoc.getElementById("sex").value = $("#sex").val();
-			     this.innerDoc.getElementById("phone").value = $("#phone").val();
-			     this.innerDoc.getElementById("username").value = $("#username").val();
-			     this.innerDoc.getElementById("email").value = $("#email").val();
-			     this.innerDoc.getElementById("ctime").value = $("#ctime").val();
+			Dialog.open({Title:"查询", Width:650, Height:220, URL:"<%=path%>/memberManage/ClientToken!search.action",OnLoad:function(){
+			     this.innerDoc.getElementById("client_id").value = $("#client_id").val();
+			     this.innerDoc.getElementById("access_token").value = $("#access_token").val();
+			     this.innerDoc.getElementById("refresh_token").value = $("#refresh_token").val();
+			     this.innerDoc.getElementById("expires_in").value = $("#expires_in").val();
+			     this.innerDoc.getElementById("expires_in_refresh").value = $("#expires_in_refresh").val();
+			     this.innerDoc.getElementById("time").value = $("#time").val();
            }
 			});    
 		}      
@@ -72,7 +72,7 @@ String path = request.getContextPath();
 	</script>
   </head> 
   <body>  
-  <GF:BodyCaption label="客户管理" ico="images/ico/user.gif"> 
+  <GF:BodyCaption label="令牌表" ico="images/ico/user.gif"> 
   	<GF:ToolBar id="123">     
 	  	<GF:ToolBarItem id="search" label="查询" ico="images/ico/search.gif" onclick="search();" />    
 	  	<GF:ToolBarItem id="add" label="添加" ico="images/ico/add.gif" 		onclick="add();" />   
@@ -82,14 +82,14 @@ String path = request.getContextPath();
 	  	<GF:ToolBarItem id="export" label="导出" ico="images/ico/export.gif" onclick="exportExcel();"/>
 	  	<GF:ToolBarItem id="refresh" label="刷新" ico="images/ico/refresh.gif" onclick="refresh();"/>  
 	</GF:ToolBar>   
-    <form action="<%=path%>/memberManage/Member!list.action" name="form1" id="form1" method="get">  
+    <form action="<%=path%>/memberManage/ClientToken!list.action" name="form1" id="form1" method="get">  
    
-			<input type="hidden" name="memberBean.hekrid" id="hekrid" value="${memberBean.hekrid}"/> 
-			<input type="hidden" name="memberBean.sex" id="sex" value="${memberBean.sex}"/> 
-			<input type="hidden" name="memberBean.phone" id="phone" value="${memberBean.phone}"/> 
-			<input type="hidden" name="memberBean.username" id="username" value="${memberBean.username}"/> 
-			<input type="hidden" name="memberBean.email" id="email" value="${memberBean.email}"/> 
-			<input type="hidden" name="memberBean.ctime" id="ctime" value="${memberBean.ctime}"/> 
+			<input type="hidden" name="clientTokenBean.clientId" id="clientId" value="${clientTokenBean.clientId}"/> 
+			<input type="hidden" name="clientTokenBean.accessToken" id="accessToken" value="${clientTokenBean.accessToken}"/> 
+			<input type="hidden" name="clientTokenBean.refreshToken" id="refreshToken" value="${clientTokenBean.refreshToken}"/> 
+			<input type="hidden" name="clientTokenBean.expiresIn" id="expiresIn" value="${clientTokenBean.expiresIn}"/> 
+			<input type="hidden" name="clientTokenBean.expiresInRefresh" id="expiresInRefresh" value="${clientTokenBean.expiresInRefresh}"/> 
+			<input type="hidden" name="clientTokenBean.time" id="time" value="${clientTokenBean.time}"/> 
 		   	<input type="hidden" name="sortname" value="${page.sortname}"/>    
 		   	<input type="hidden" name="sortorder"  value="${page.sortorder }"/>
 		   	<input type="hidden" name="pageSize" value="${page.pageSize}"/>    
@@ -98,24 +98,24 @@ String path = request.getContextPath();
 			   	 <thead>
 			   		<tr>  
 			   			<th><span><input type="checkbox" onClick="checkAll(this,'idArr')"  width="20"/></span></th>     
-			   			<th sortname="hekrid" width="10%">hekrid</th>	   
-			   			<th sortname="sex" width="10%">性别</th>	   
-			   			<th sortname="phone" width="10%">手机</th>	   
-			   			<th sortname="username" width="10%">姓名</th>	   
-			   			<th sortname="email" width="10%">邮箱</th>	   
-			   			<th sortname="ctime" width="10%">绑定此平台时间</th>	   
+			   			<th sortname="client_id" width="10%">clientid</th>	   
+			   			<th sortname="access_token" width="10%">操作令牌</th>	   
+			   			<th sortname="refresh_token" width="10%">刷新令牌</th>	   
+			   			<th sortname="expires_in" width="10%">过期时间（单位:秒）</th>	   
+			   			<th sortname="expires_in_refresh" width="10%">刷新令牌过期时间(单位:秒)</th>	   
+			   			<th sortname="time" width="10%">时间</th>	   
 			   		</tr> 
 			   	</thead>
 			   	<tbody> 
 			   		<s:iterator value="#request.list" id="map"> 
 		   			 <tr> 
 		   			 	 <td align="left"><input type="checkbox" name="idArr"  value="${map.id}"/></td> 
-		   			 	 <td>${map.hekrid}</td>    
-		   			 	 <td>${map.sex}</td>    
-		   			 	 <td>${map.phone}</td>    
-		   			 	 <td>${map.username}</td>    
-		   			 	 <td>${map.email}</td>    
-		   			 	 <td>${map.ctime}</td>    
+		   			 	 <td>${map.client_id}</td>    
+		   			 	 <td>${map.access_token}</td>    
+		   			 	 <td>${map.refresh_token}</td>    
+		   			 	 <td>${map.expires_in}</td>    
+		   			 	 <td>${map.expires_in_refresh}</td>    
+		   			 	 <td>${map.time}</td>    
 		   			 </tr>
 		   			 </s:iterator> 	    
 		   		</tbody>		    		  

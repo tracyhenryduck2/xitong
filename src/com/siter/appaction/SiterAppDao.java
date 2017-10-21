@@ -1,17 +1,22 @@
 package com.siter.appaction;
 
 import com.common.BaseDAO;
-import com.memberManage.bean.MemberBean;
+import com.memberManage.bean.ClientBean;
 
 public class SiterAppDao extends BaseDAO{
 	
 	
-	public MemberBean getMemberInfoByHekrid(String hekrid){
-	
-		Object[] params={hekrid};
-		
-		
-		return j.queryForBean(MemberBean.class, "select * from member where hekrid = ?",params);
+	/**
+	 * 获取登录用户
+	 * 
+	 * @return
+	 */
+	public ClientBean selectClientBean(String username, String password) {
+		Object[] params = { username, password };
+		return j.queryForBean(
+				ClientBean.class,
+						"SELECT * from client WHERE username=? and password=? ",
+						params);
 	}
      
 }

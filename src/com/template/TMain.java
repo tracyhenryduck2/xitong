@@ -16,7 +16,7 @@ public class TMain {
 		String[] pakageArr = packageName.split("\\.");
 		String folderName=pakageArr[pakageArr.length-1];
 		String schema="point";
-		String tableName = "client";//fault_bill
+		String tableName = "client_token";//fault_bill
 		String path = "d:\\work1\\template\\"+packageName;
 		File f = new File(path);
 		if(!f.exists()) {
