@@ -72,19 +72,14 @@ public class SiterAction extends BaseActionSupport{
 		String password = null;
 		String client_type = null;
 
-		String contentType = request.getContentType();
-		if ((contentType != null) && contentType.equalsIgnoreCase("application/json")) {
+		if (isJsonType(request.getContentType())) {
 		    // load JSON object
-
 				String obj = deserialize(request.getReader());
 				JSONObject js = new JSONObject(obj);
 				username =js.getString("username");
 				password =js.getString("password");
 				client_type = js.getString("clientType");
-
-
 		}else{
-			
 			username = request.getParameter("username");
 			password = request.getParameter("password");
 			client_type = request.getParameter("clientType"); 
@@ -176,6 +171,98 @@ public class SiterAction extends BaseActionSupport{
 	}
 	
 	
+	public void refreshToken(){
+		Map<String,Object> loginInfo=new HashMap<String,Object>();
+		String refresh_token = null;
+		try{
+			if (isJsonType( request.getContentType())) {
+			    // load JSON object
+					String obj = deserialize(request.getReader());
+					JSONObject js = new JSONObject(obj);
+					refresh_token =js.getString("refresh_token");
+			}else{
+				refresh_token = request.getParameter("refresh_token");
+			}
+			
+			if(refresh_token!=null&&refresh_token.length()>0){
+	        	ClientTokenBean client = siterAppdao.getClientBeanByRefreshToken(refresh_token);
+		        if(client!=null){
+					//时间戳
+					Long time = new Date().getTime();
+					
+					if((client.getTime()+StaticBean.EXPIRES_IN_REFRESH)*1000L >= time){
+						//获取ip
+						String ip = getIpAddr(request);
+						//获取浏览器信息
+						int port =request.getRemotePort();
+						//得出token
+						String tokensub1 =client.getClientId()+":"+ip+":"+port+":"+time;
+						String tokensub2 = getNewPwd();
+						
+						String access_token = MD5.md5(tokensub1);
+						String refresh_token_new = MD5.md5(tokensub1)+"."+MD5.md5(tokensub2);
+						
+						
+						ClientTokenBean clienttoken = new ClientTokenBean();
+
+						clienttoken.setTime(time/1000);
+						clienttoken.setAccessToken(access_token);
+						clienttoken.setRefreshToken(refresh_token_new);
+						if(siterAppdao.refreshToken(refresh_token,clienttoken)){
+												
+							loginInfo.put("accessToken", access_token);
+							loginInfo.put("refreshToken", refresh_token_new);
+							loginInfo.put("expiresIn", StaticBean.EXPIRES_IN);
+							loginInfo.put("code", ErrCode.SUCCESS_CLIENT.getCode());
+							loginInfo.put("desc", ErrCode.SUCCESS_CLIENT.getName());	
+						}else{
+							loginInfo.put("code", ErrCode.SERVER_INERNAL_ERROR.getCode());
+							loginInfo.put("desc", ErrCode.SERVER_INERNAL_ERROR.getName());
+							response.setStatus(ErrCode.SERVER_INERNAL_ERROR.getCode());
+						}
+					}else{
+						
+						loginInfo.put("code", ErrCode.REFRESH_TOKEN_TIME_OUT_ERROR.getCode());
+						loginInfo.put("desc", ErrCode.REFRESH_TOKEN_TIME_OUT_ERROR.getName());
+						response.setStatus(ErrCode.REFRESH_TOKEN_TIME_OUT_ERROR.getCode());
+						
+					}
+					
+
+		        	
+		        }else{
+		        	
+					loginInfo.put("code", ErrCode.REFRESH_TOKEN_NOT_EXIST_ERROR.getCode());
+					loginInfo.put("desc", ErrCode.REFRESH_TOKEN_NOT_EXIST_ERROR.getName());
+					response.setStatus(ErrCode.REFRESH_TOKEN_NOT_EXIST_ERROR.getCode());
+		        }
+				
+			}else{
+				loginInfo.put("code", ErrCode.PARAMETER_EMPTY_ERROR.getCode());
+				loginInfo.put("desc", ErrCode.PARAMETER_EMPTY_ERROR.getName());
+				response.setStatus(ErrCode.PARAMETER_EMPTY_ERROR.getCode());
+			}
+			
+			
+		}catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			loginInfo.put("code", ErrCode.JSON_FORMAT_ERROR.getCode());
+			loginInfo.put("desc", ErrCode.JSON_FORMAT_ERROR.getName());
+			response.setStatus(ErrCode.JSON_FORMAT_ERROR.getCode());
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			loginInfo.put("code", ErrCode.SERVER_INERNAL_ERROR.getCode());
+			loginInfo.put("desc", ErrCode.SERVER_INERNAL_ERROR.getName());
+			response.setStatus(ErrCode.SERVER_INERNAL_ERROR.getCode());
+		}finally{
+			outPrintJSONObject(loginInfo);
+		}
+		
+	}
+	
 	
 	/**
 	 * 获取ip地址
@@ -195,6 +282,90 @@ public class SiterAction extends BaseActionSupport{
 	       } 
 	       return ip; 
 	 }
+	
+	
+	/**
+	 * 移动端获取客户信息
+	 * http://SERVER[:PORT]/PROJECTNAME/app/SiterAction!profile.action
+	 * @return
+	 */
+	public void profile(){
+		Map<String,Object> output=new HashMap<String,Object>();
+		String token = request.getHeader("Authorization");
+		
+		  try{
+				if(token.length()>0){
+					if(token.startsWith("Bearer ")){
+						
+						String access_token = token.substring("Bearer ".length());
+						boolean flag_exist = siterAppdao.isAccessTokenExist(access_token);
+						if(flag_exist){
+							
+							if(!isTokenTimeOut(access_token)){
+							ClientBean beana =	siterAppdao.getClientBeanByAccessToken(access_token);
+							Map<String , Object> d = BeanConverter.toMap(beana);
+							
+							for (String key : d.keySet()) { 
+								output.put(key, d.get(key));
+								}
+							
+							output.put("code", ErrCode.SUCCESS_CLIENT.getCode());
+							output.put("desc", ErrCode.SUCCESS_CLIENT.getName());
+							}else{
+								output.put("code", ErrCode.JWT_TIME_OUT_ERROR.getCode());
+								output.put("desc", ErrCode.JWT_TIME_OUT_ERROR.getName());
+								response.setStatus(ErrCode.JWT_TIME_OUT_ERROR.getCode());
+							}
+									
+						}else{	
+							output.put("code", ErrCode.JWT_NOT_EXIST_ERROR.getCode());
+							output.put("desc", ErrCode.JWT_NOT_EXIST_ERROR.getName());
+							response.setStatus(ErrCode.JWT_NOT_EXIST_ERROR.getCode());
+						}
+	                    
+					}else{
+						output.put("code", ErrCode.JWT_PARSE_ERROR.getCode());
+						output.put("desc", ErrCode.JWT_PARSE_ERROR.getName());
+						response.setStatus(ErrCode.JWT_PARSE_ERROR.getCode());
+					}
+					
+					
+				}else{
+					output.put("code", ErrCode.JWT_PARSE_ERROR.getCode());
+					output.put("desc", ErrCode.JWT_PARSE_ERROR.getName());
+					response.setStatus(ErrCode.JWT_PARSE_ERROR.getCode());
+				}
+		  }catch(NullPointerException e){
+				output.put("code", ErrCode.JWT_PARSE_ERROR.getCode());
+				output.put("desc", ErrCode.JWT_PARSE_ERROR.getName());
+				response.setStatus(ErrCode.JWT_PARSE_ERROR.getCode());
+		  }finally{
+				outPrintJSONObject(output);
+		  }
+
+		
+	}
+	
+	private boolean isTokenTimeOut(String access_token){
+		
+		Long time = siterAppdao.getTokenTime(access_token);
+		Long time_now = new Date().getTime();
+		
+		if(((time+StaticBean.EXPIRES_IN) * 1000l)<time_now)
+		
+		return true;
+		
+		else return false;
+	}
+	
+	private boolean isJsonType(String jsonType){
+		
+		if ((jsonType != null) && jsonType.equalsIgnoreCase("application/json")){
+			return true;
+		}
+		else return false;
+		
+	}
 	
 	/**
 	 * 生成8位随机数字密码

@@ -41,14 +41,38 @@ String path = request.getContextPath();
 			    "clientBean.password":{            
 			        required : true,CNRangeLength:[0,45]
 			    },                              
-			    "clientBean.img":{            
-			        CNRangeLength:[0,255]
-			    },                              
 			    "clientBean.email":{            
 			        CNRangeLength:[0,45]
 			    },                              
-			    "clientBean.phone":{            
+			    "clientBean.phoneNumber":{            
 			        CNRangeLength:[0,20]
+			    },                              
+			    "clientBean.birthday":{            
+			        number:true,range:[0,9999999999]
+			    },                              
+			    "clientBean.firstName":{            
+			        CNRangeLength:[0,45]
+			    },                              
+			    "clientBean.lastName":{            
+			        CNRangeLength:[0,45]
+			    },                              
+			    "clientBean.render":{            
+			        CNRangeLength:[0,5]
+			    },                              
+			    "clientBean.age":{            
+			        number:true,range:[0,9999999999]
+			    },                              
+			    "clientBean.description":{            
+			        CNRangeLength:[0,255]
+			    },                              
+			    "clientBean.small":{            
+			        CNRangeLength:[0,255]
+			    },                              
+			    "clientBean.big":{            
+			        CNRangeLength:[0,255]
+			    },                              
+			    "clientBean.updateDate":{            
+			        number:true,range:[0,9999999999]
 			    }                              
 			},                                  
 			messages:{                          
@@ -68,15 +92,13 @@ String path = request.getContextPath();
 <input type="hidden" name="clientBean.id" id="id" value="${clientBean.id }"/>  
 <table cellpadding="0" cellspacing="0" width="100%" class="GF-grid"> 
   <tr>                                    
-    	<td align="right" width="30%" > 
+    	<td align="right" width="20%" > 
                             登陆名<span class="mark">*</span>   
         </td>                            
         <td>                             
             <input type="text" name="clientBean.username" id="username"  value="${clientBean.username}" class="GF-field"/>   
         </td>                            
-  </tr>                                
-  <tr>                                    
-    	<td align="right" > 
+    	<td align="right" width="20%" > 
                             密码<span class="mark">*</span>   
         </td>                            
         <td>                             
@@ -84,32 +106,88 @@ String path = request.getContextPath();
         </td>                            
   </tr>                                
   <tr>                                    
-    	<td align="right" > 
-                            头像<span class="mark"></span>   
-        </td>                            
-        <td>                             
-            <input type="text" name="clientBean.img" id="img"  value="${clientBean.img}" class="GF-field"/>   
-        </td>                            
-  </tr>                                
-  <tr>                                    
-    	<td align="right" > 
+    	<td align="right"  > 
                             邮箱<span class="mark"></span>   
         </td>                            
         <td>                             
             <input type="text" name="clientBean.email" id="email"  value="${clientBean.email}" class="GF-field"/>   
         </td>                            
-  </tr>                                
-  <tr>                                    
-    	<td align="right" > 
+    	<td align="right"  > 
                             手机号<span class="mark"></span>   
         </td>                            
         <td>                             
-            <input type="text" name="clientBean.phone" id="phone"  value="${clientBean.phone}" class="GF-field"/>   
+            <input type="text" name="clientBean.phoneNumber" id="phoneNumber"  value="${clientBean.phoneNumber}" class="GF-field"/>   
         </td>                            
+  </tr>                                
+  <tr>                                    
+    	<td align="right"  > 
+                            生日<span class="mark"></span>   
+        </td>                            
+        <td>                             
+            <input type="text" name="clientBean.birthday" id="birthday"  value="${clientBean.birthday}" class="GF-field"/>   
+        </td>                            
+    	<td align="right"  > 
+                            名<span class="mark"></span>   
+        </td>                            
+        <td>                             
+            <input type="text" name="clientBean.firstName" id="firstName"  value="${clientBean.firstName}" class="GF-field"/>   
+        </td>                            
+  </tr>                                
+  <tr>                                    
+    	<td align="right"  > 
+                            姓<span class="mark"></span>   
+        </td>                            
+        <td>                             
+            <input type="text" name="clientBean.lastName" id="lastName"  value="${clientBean.lastName}" class="GF-field"/>   
+        </td>                            
+    	<td align="right"  > 
+                            性别<span class="mark"></span>   
+        </td>                            
+        <td>                             
+            <input type="text" name="clientBean.render" id="render"  value="${clientBean.render}" class="GF-field"/>   
+        </td>                            
+  </tr>                                
+  <tr>                                    
+    	<td align="right"  > 
+                            年龄<span class="mark"></span>   
+        </td>                            
+        <td>                             
+            <input type="text" name="clientBean.age" id="age"  value="${clientBean.age}" class="GF-field"/>   
+        </td>                            
+    	<td align="right"  > 
+                            描述<span class="mark"></span>   
+        </td>                            
+        <td>                             
+            <input type="text" name="clientBean.description" id="description"  value="${clientBean.description}" class="GF-field"/>   
+        </td>                            
+  </tr>                                
+  <tr>                                    
+    	<td align="right"  > 
+                            小头像<span class="mark"></span>   
+        </td>                            
+        <td>                             
+            <input type="text" name="clientBean.small" id="small"  value="${clientBean.small}" class="GF-field"/>   
+        </td>                            
+    	<td align="right"  > 
+                            大头像<span class="mark"></span>   
+        </td>                            
+        <td>                             
+            <input type="text" name="clientBean.big" id="big"  value="${clientBean.big}" class="GF-field"/>   
+        </td>                            
+  </tr>                                
+  <tr>                                    
+    	<td align="right"  > 
+                            更新时间<span class="mark"></span>   
+        </td>                            
+        <td>                             
+            <input type="text" name="clientBean.updateDate" id="updateDate"  value="${clientBean.updateDate}" class="GF-field"/>   
+        </td>                            
+    	<td align="right" width="20%">&nbsp;</td> 
+    	<td></td>                        
   </tr>                                
   <tr>                                
       <td>&nbsp;</td>		
-      <td><input type="button" name="提交" value="提交" onclick="save();" class="GF-btn"/></td>		
+      <td colspan="3"><input type="button" name="保存" value="保存" onclick="save();" class="GF-btn"/></td>		
   </tr>                                
 </table>                                 
 <iframe name="fram" id="fram" style="display:none"></iframe>   

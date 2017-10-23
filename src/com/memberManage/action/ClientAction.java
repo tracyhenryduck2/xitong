@@ -9,7 +9,7 @@ import com.common.BaseActionSupport;
 
 /**
  * 客户
- * @author xin.chou
+ * @author junjun.xue
  *
  */
 public class ClientAction extends BaseActionSupport {
@@ -64,7 +64,9 @@ public class ClientAction extends BaseActionSupport {
     public String addTest2(){
         showMessage = "编辑2"+tableDesc;
         String[] param={
-            "id","username","password","img","email","phone"
+            "id","username","password","email","phoneNumber","birthday"
+            ,"firstName","lastName","render","age","description"
+            ,"small","big","updateDate"
         };
         boolean result=dao.update(clientBean,param);
         if (result) { 

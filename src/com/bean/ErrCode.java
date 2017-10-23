@@ -36,7 +36,11 @@ public enum ErrCode {
 	  DEVICE_NOT_BELONG_CLIENT_ERROR(9400014,"Device does not belong to user"),
 	  DEVTID_EMPTY_ERROR(9400017,"devTid can not be empty"),
 	  LOGIN_INFO_NOT_COMPLETE(9400018,"Login info not complete"),
-	  PARAMETER_EMPTY_ERROR(9400019,"Parameter is empty");
+	  PARAMETER_EMPTY_ERROR(9400019,"Parameter is empty"),
+	  REFRESH_TOKEN_NOT_EXIST_ERROR(9400020,"refresh token not exist"),
+	  REFRESH_TOKEN_TIME_OUT_ERROR(1,"refresh token time out"),
+	  JWT_TIME_OUT_ERROR(403,"JWT time out"),
+	  JWT_NOT_EXIST_ERROR(9400021,"JWT is not exist");
 	  
 	  
 	

@@ -61,9 +61,17 @@ String path = request.getContextPath();
 			Dialog.open({Title:"查询", Width:650, Height:220, URL:"<%=path%>/memberManage/Client!search.action",OnLoad:function(){
 			     this.innerDoc.getElementById("username").value = $("#username").val();
 			     this.innerDoc.getElementById("password").value = $("#password").val();
-			     this.innerDoc.getElementById("img").value = $("#img").val();
 			     this.innerDoc.getElementById("email").value = $("#email").val();
-			     this.innerDoc.getElementById("phone").value = $("#phone").val();
+			     this.innerDoc.getElementById("phone_number").value = $("#phone_number").val();
+			     this.innerDoc.getElementById("birthday").value = $("#birthday").val();
+			     this.innerDoc.getElementById("first_name").value = $("#first_name").val();
+			     this.innerDoc.getElementById("last_name").value = $("#last_name").val();
+			     this.innerDoc.getElementById("render").value = $("#render").val();
+			     this.innerDoc.getElementById("age").value = $("#age").val();
+			     this.innerDoc.getElementById("description").value = $("#description").val();
+			     this.innerDoc.getElementById("small").value = $("#small").val();
+			     this.innerDoc.getElementById("big").value = $("#big").val();
+			     this.innerDoc.getElementById("update_date").value = $("#update_date").val();
            }
 			});    
 		}      
@@ -85,9 +93,17 @@ String path = request.getContextPath();
    
 			<input type="hidden" name="clientBean.username" id="username" value="${clientBean.username}"/> 
 			<input type="hidden" name="clientBean.password" id="password" value="${clientBean.password}"/> 
-			<input type="hidden" name="clientBean.img" id="img" value="${clientBean.img}"/> 
 			<input type="hidden" name="clientBean.email" id="email" value="${clientBean.email}"/> 
-			<input type="hidden" name="clientBean.phone" id="phone" value="${clientBean.phone}"/> 
+			<input type="hidden" name="clientBean.phoneNumber" id="phoneNumber" value="${clientBean.phoneNumber}"/> 
+			<input type="hidden" name="clientBean.birthday" id="birthday" value="${clientBean.birthday}"/> 
+			<input type="hidden" name="clientBean.firstName" id="firstName" value="${clientBean.firstName}"/> 
+			<input type="hidden" name="clientBean.lastName" id="lastName" value="${clientBean.lastName}"/> 
+			<input type="hidden" name="clientBean.render" id="render" value="${clientBean.render}"/> 
+			<input type="hidden" name="clientBean.age" id="age" value="${clientBean.age}"/> 
+			<input type="hidden" name="clientBean.description" id="description" value="${clientBean.description}"/> 
+			<input type="hidden" name="clientBean.small" id="small" value="${clientBean.small}"/> 
+			<input type="hidden" name="clientBean.big" id="big" value="${clientBean.big}"/> 
+			<input type="hidden" name="clientBean.updateDate" id="updateDate" value="${clientBean.updateDate}"/> 
 		   	<input type="hidden" name="sortname" value="${page.sortname}"/>    
 		   	<input type="hidden" name="sortorder"  value="${page.sortorder }"/>
 		   	<input type="hidden" name="pageSize" value="${page.pageSize}"/>    
@@ -98,9 +114,17 @@ String path = request.getContextPath();
 			   			<th><span><input type="checkbox" onClick="checkAll(this,'idArr')"  width="20"/></span></th>     
 			   			<th sortname="username" width="10%">登陆名</th>	   
 			   			<th sortname="password" width="10%">密码</th>	   
-			   			<th sortname="img" width="10%">头像</th>	   
 			   			<th sortname="email" width="10%">邮箱</th>	   
-			   			<th sortname="phone" width="10%">手机号</th>	   
+			   			<th sortname="phone_number" width="10%">手机号</th>	   
+			   			<th sortname="birthday" width="10%">生日</th>	   
+			   			<th sortname="first_name" width="10%">名</th>	   
+			   			<th sortname="last_name" width="10%">姓</th>	   
+			   			<th sortname="render" width="10%">性别</th>	   
+			   			<th sortname="age" width="10%">年龄</th>	   
+			   			<th sortname="description" width="10%">描述</th>	   
+			   			<th sortname="small" width="10%">小头像</th>	   
+			   			<th sortname="big" width="10%">大头像</th>	   
+			   			<th sortname="update_date" width="10%">更新时间</th>	   
 			   		</tr> 
 			   	</thead>
 			   	<tbody> 
@@ -109,9 +133,17 @@ String path = request.getContextPath();
 		   			 	 <td align="left"><input type="checkbox" name="idArr"  value="${map.id}"/></td> 
 		   			 	 <td>${map.username}</td>    
 		   			 	 <td>${map.password}</td>    
-		   			 	 <td>${map.img}</td>    
 		   			 	 <td>${map.email}</td>    
-		   			 	 <td>${map.phone}</td>    
+		   			 	 <td>${map.phone_number}</td>    
+		   			 	 <td>${map.birthday}</td>    
+		   			 	 <td>${map.first_name}</td>    
+		   			 	 <td>${map.last_name}</td>    
+		   			 	 <td>${map.render}</td>    
+		   			 	 <td>${map.age}</td>    
+		   			 	 <td>${map.description}</td>    
+		   			 	 <td>${map.small}</td>    
+		   			 	 <td>${map.big}</td>    
+		   			 	 <td>${map.update_date}</td>    
 		   			 </tr>
 		   			 </s:iterator> 	    
 		   		</tbody>		    		  

@@ -5,7 +5,7 @@ import com.common.*;
 
 /**
  * 客户
- * @author xin.chou
+ * @author junjun.xue
  *
  */
 @Table(name="client")
@@ -30,12 +30,6 @@ public class ClientBean {
 	private String password;
 
 	/**
-	 * 头像 
-	*/
-	@Column(name="img")
-	private String img;
-
-	/**
 	 * 邮箱 
 	*/
 	@Column(name="email")
@@ -44,8 +38,62 @@ public class ClientBean {
 	/**
 	 * 手机号 
 	*/
-	@Column(name="phone")
-	private String phone;
+	@Column(name="phone_number")
+	private String phoneNumber;
+
+	/**
+	 * 生日 
+	*/
+	@Column(name="birthday")
+	private Long birthday;
+
+	/**
+	 * 名 
+	*/
+	@Column(name="first_name")
+	private String firstName;
+
+	/**
+	 * 姓 
+	*/
+	@Column(name="last_name")
+	private String lastName;
+
+	/**
+	 * 性别 
+	*/
+	@Column(name="render")
+	private String render;
+
+	/**
+	 * 年龄 
+	*/
+	@Column(name="age")
+	private Long age;
+
+	/**
+	 * 描述 
+	*/
+	@Column(name="description")
+	private String description;
+
+	/**
+	 * 小头像 
+	*/
+	@Column(name="small")
+	private String small;
+
+	/**
+	 * 大头像 
+	*/
+	@Column(name="big")
+	private String big;
+
+	/**
+	 * 更新时间 
+	*/
+	@Column(name="update_date")
+	private Long updateDate;
     	
     /** 
      * id
@@ -96,22 +144,6 @@ public class ClientBean {
     }
     	
     /** 
-     * 头像
-     * @return 
-     */ 
-    public String getImg() {
-    	return img;
-    }
-    
-    /** 
-     * 头像
-     * @param 
-     */ 
-    public void setImg(String img) {
-    	this.img = img;
-    }
-    	
-    /** 
      * 邮箱
      * @return 
      */ 
@@ -131,15 +163,160 @@ public class ClientBean {
      * 手机号
      * @return 
      */ 
-    public String getPhone() {
-    	return phone;
+    public String getPhoneNumber() {
+    	return phoneNumber;
     }
     
     /** 
      * 手机号
      * @param 
      */ 
-    public void setPhone(String phone) {
-    	this.phone = phone;
+    public void setPhoneNumber(String phoneNumber) {
+    	this.phoneNumber = phoneNumber;
     }
+    	
+    /** 
+     * 生日
+     * @return 
+     */ 
+    public Long getBirthday() {
+    	return birthday;
+    }
+    
+    /** 
+     * 生日
+     * @param 
+     */ 
+    public void setBirthday(Long birthday) {
+    	this.birthday = birthday;
+    }
+    	
+    /** 
+     * 名
+     * @return 
+     */ 
+    public String getFirstName() {
+    	return firstName;
+    }
+    
+    /** 
+     * 名
+     * @param 
+     */ 
+    public void setFirstName(String firstName) {
+    	this.firstName = firstName;
+    }
+    	
+    /** 
+     * 姓
+     * @return 
+     */ 
+    public String getLastName() {
+    	return lastName;
+    }
+    
+    /** 
+     * 姓
+     * @param 
+     */ 
+    public void setLastName(String lastName) {
+    	this.lastName = lastName;
+    }
+    	
+    /** 
+     * 性别
+     * @return 
+     */ 
+    public String getRender() {
+    	return render;
+    }
+    
+    /** 
+     * 性别
+     * @param 
+     */ 
+    public void setRender(String render) {
+    	this.render = render;
+    }
+    	
+    /** 
+     * 年龄
+     * @return 
+     */ 
+    public Long getAge() {
+    	return age;
+    }
+    
+    /** 
+     * 年龄
+     * @param 
+     */ 
+    public void setAge(Long age) {
+    	this.age = age;
+    }
+    	
+    /** 
+     * 描述
+     * @return 
+     */ 
+    public String getDescription() {
+    	return description;
+    }
+    
+    /** 
+     * 描述
+     * @param 
+     */ 
+    public void setDescription(String description) {
+    	this.description = description;
+    }
+    	
+    /** 
+     * 小头像
+     * @return 
+     */ 
+    public String getSmall() {
+    	return small;
+    }
+    
+    /** 
+     * 小头像
+     * @param 
+     */ 
+    public void setSmall(String small) {
+    	this.small = small;
+    }
+    	
+    /** 
+     * 大头像
+     * @return 
+     */ 
+    public String getBig() {
+    	return big;
+    }
+    
+    /** 
+     * 大头像
+     * @param 
+     */ 
+    public void setBig(String big) {
+    	this.big = big;
+    }
+    	
+    /** 
+     * 更新时间
+     * @return 
+     */ 
+    public Long getUpdateDate() {
+    	return updateDate;
+    }
+    
+    /** 
+     * 更新时间
+     * @param 
+     */ 
+    public void setUpdateDate(Long updateDate) {
+    	this.updateDate = updateDate;
+    }
+    	
 }
