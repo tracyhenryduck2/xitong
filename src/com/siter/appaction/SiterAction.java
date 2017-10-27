@@ -292,7 +292,7 @@ public class SiterAction extends BaseActionSupport{
 	public void profile(){
 		Map<String,Object> output=new HashMap<String,Object>();
 		String token = request.getHeader("Authorization");
-		
+		String method = request.getMethod();
 		  try{
 				if(token.length()>0){
 					if(token.startsWith("Bearer ")){

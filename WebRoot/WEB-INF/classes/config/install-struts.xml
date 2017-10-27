@@ -8,14 +8,6 @@
    <!--  <constant name="struts.devMode" value="false" /> -->
    
    <package name="install" extends="struts-default" namespace="/install/action">
-		<action name="InstallAction" class="com.install.action.InstallAction">
-			<result name="search">/install/install_search.jsp</result>
-			<result name="list">/install/install_list.jsp</result>
-		</action>
-		<action name="InspectorAction" class="com.install.action.InspectorAction" >
-			<result name="search">/install/main.jsp</result>
-			<result name="list">/install/inspector_list.jsp</result>
-		</action>
 		<action name="ProductAction" class="com.install.action.ProductAction" >
 		</action>
 		<action name="PicUploadAction" class="com.install.action.PicUploadAction">

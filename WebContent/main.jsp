@@ -84,7 +84,7 @@ table{border-collapse:collapse;border-spacing:0;}
 					</span>
               </td>
                 <td class="right-content" valign="top" align="left">
-                    <iframe  width="100%" height="100%" frameborder="0" id="iframe_content" name="iframe_content" src="install/action/InstallAction!list.action"></iframe>
+                    <iframe  width="100%" height="100%" frameborder="0" id="iframe_content" name="iframe_content" src="memberManage/Client!list.action"></iframe>
                 </td>
             </tr>
           </table>
