@@ -199,18 +199,22 @@ public class SiterAction extends BaseActionSupport{
 						String tokensub1 =client.getClientId()+":"+ip+":"+port+":"+time;
 						String tokensub2 = getNewPwd();
 						
-						String access_token = MD5.md5(tokensub1);
+						String access_token_new = MD5.md5(tokensub1);
 						String refresh_token_new = MD5.md5(tokensub1)+"."+MD5.md5(tokensub2);
 						
 						
 						ClientTokenBean clienttoken = new ClientTokenBean();
-
-						clienttoken.setTime(time/1000);
-						clienttoken.setAccessToken(access_token);
+						clienttoken.setAccessToken(access_token_new);
 						clienttoken.setRefreshToken(refresh_token_new);
-						if(siterAppdao.refreshToken(refresh_token,clienttoken)){
-												
-							loginInfo.put("accessToken", access_token);
+						clienttoken.setClientId(client.getId());
+						clienttoken.setTime(time/1000);
+						clienttoken.setRefreshToken(refresh_token);
+						clienttoken.setExpiresIn(StaticBean.EXPIRES_IN);
+						clienttoken.setExpiresInRefresh(StaticBean.EXPIRES_IN_REFRESH);	
+						clienttoken.setClientType(client.getClientType());
+						boolean flag =  clienttokendao.insert(clienttoken);
+						if(flag){				
+							loginInfo.put("accessToken", access_token_new);
 							loginInfo.put("refreshToken", refresh_token_new);
 							loginInfo.put("expiresIn", StaticBean.EXPIRES_IN);
 							loginInfo.put("code", ErrCode.SUCCESS_CLIENT.getCode());

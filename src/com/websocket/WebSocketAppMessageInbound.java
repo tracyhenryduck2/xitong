@@ -3,41 +3,41 @@ package com.websocket;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
-
-import net.sf.json.JSONObject;
+import java.util.Date;
 
 import org.apache.catalina.websocket.MessageInbound;
 import org.apache.catalina.websocket.WsOutbound;
+import org.apache.commons.lang.StringUtils;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import com.memberManage.bean.ClientBean;
 import com.siter.appaction.SiterAppDao;
-import com.system.bean.SUserBean;
 
 public class WebSocketAppMessageInbound extends MessageInbound {
 
 	//当前连接的用户名称
-	private ClientBean user;
 	private SiterAppDao siterAppdao;
-
-	public WebSocketAppMessageInbound(ClientBean user) {
-		System.out.println("WebSocketAppMessageInbound:"+user);
-		this.user = user;
-	}
+	private String ip;
+	private String access_token;
+    private ClientBean user;
 
 	
-	public WebSocketAppMessageInbound() {
+	public WebSocketAppMessageInbound(String ip) {
 		siterAppdao = new SiterAppDao();
+		this.ip = ip;
 	}
 	
-	public ClientBean getUser() {
-		return this.user;
+	
+
+	public String getAccess_token() {
+		return access_token;
 	}
 
-	
-	
-	
-	public void setUser(String token) {
-       
+
+	public void setAccess_token(String access_token) {
+		this.access_token = access_token;
+		this.user = siterAppdao.getClientBeanByAccessToken(access_token);
 	}
 
 
@@ -87,5 +87,32 @@ public class WebSocketAppMessageInbound extends MessageInbound {
 		//向所有在线用户发送消息
 		System.out.println("发上来的消息:"+message.toString());
 		//WebSocketMessageInboundPool.sendMessage(message.toString());
+		
+		try {
+			JSONObject js = new JSONObject(message.toString());
+			if(js.has("action") && "appLogin".equals(js.get("action"))){
+				JSONObject js2 = js.getJSONObject("params");
+				if(js2.has("token")){
+					String token = js2.getString("token");
+					if(StringUtils.isNotEmpty(token)){
+
+						     siterAppdao.addLogin(token, ip, new Date().getTime()/1000l);
+							 setAccess_token(token);
+							 JSONObject ds = new JSONObject();
+							
+							 ds.put("msgId", 0);
+							 ds.put("action", "appLoginResp");
+							 ds.put("code", 200);
+							 ds.put("desc", "success");
+							 this.getWsOutbound().writeTextMessage(CharBuffer.wrap(ds.toString()));
+						 
+					}
+					
+				}
+			}
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

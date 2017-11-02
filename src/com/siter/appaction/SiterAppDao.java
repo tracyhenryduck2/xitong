@@ -106,5 +106,15 @@ public class SiterAppDao extends BaseDAO{
 		return j.queryForLong(sql, params);
 		
 	}
+
+	public boolean addLogin(String token,String ip,Long time){
+		
+		
+		String sql = "insert client_login_log (access_token,ip,time) values (?,?,?)";
+		Object[] params = {token,ip,time};		
+		
+		return j.execute(sql, params);
+	}
+	
 	
 }

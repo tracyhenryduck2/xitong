@@ -22,6 +22,6 @@ public class WebSocketAppMessageServlet extends org.apache.catalina.websocket.We
     protected StreamInbound createWebSocketInbound(String subProtocol,HttpServletRequest request) {
     	String addr = request.getRemoteAddr();
     	System.out.println("addr:"+addr);
-        return new WebSocketAppMessageInbound();
+        return new WebSocketAppMessageInbound(request.getRemoteAddr());
     }
 }
