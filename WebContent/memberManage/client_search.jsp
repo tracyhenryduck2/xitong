@@ -22,6 +22,7 @@ String path = request.getContextPath();
 			Dialog.opener().document.getElementById("small").value = $("#small").val()||"";    
 			Dialog.opener().document.getElementById("big").value = $("#big").val()||"";    
 			Dialog.opener().document.getElementById("updateDate").value = $("#updateDate").val()||"";    
+			Dialog.opener().document.getElementById("ctime").value = $("#ctime").val()||""; 
 			Dialog.opener().document.form1.submit();                     
 			ownerDialog.close();
 	}                                       
@@ -68,6 +69,9 @@ String path = request.getContextPath();
 			        CNRangeLength:[0,255]
 			    },                              
 			    "clientBean.updateDate":{            
+			        number:true,range:[0,9999999999]
+			    },
+			    "clientBean.ctime":{            
 			        number:true,range:[0,9999999999]
 			    }                              
 			},                                  
@@ -174,6 +178,16 @@ String path = request.getContextPath();
         </td>                            
         <td>                             
             <input type="text" name="clientBean.updateDate" id="updateDate"  value="${clientBean.updateDate}" class="GF-field"/>   
+        </td>                            
+    	<td align="right" width="20%">&nbsp;</td> 
+    	<td></td>                        
+  </tr>
+    <tr>                                    
+    	<td align="right" width="20%" > 
+                           注册时间<span class="mark"></span>   
+        </td>                            
+        <td>                             
+            <input type="text" name="clientBean.ctime" id="ctime"  value="${clientBean.ctime}" class="GF-field"/>   
         </td>                            
     	<td align="right" width="20%">&nbsp;</td> 
     	<td></td>                        

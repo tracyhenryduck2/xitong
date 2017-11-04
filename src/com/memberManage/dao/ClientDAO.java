@@ -80,6 +80,10 @@ public class ClientDAO extends BaseDAO {
     		if(clientBean.getUpdateDate() != null) { 
     			objectList.add(clientBean.getUpdateDate());
     			sqlWhere += " AND a.update_date = ? ";
+    		}
+    		if(clientBean.getCtime() != null) { 
+    			objectList.add(clientBean.getCtime());
+    			sqlWhere += " AND a.ctime = ? ";
     		} 
     	}                 
     	sql = sql + sqlWhere; 

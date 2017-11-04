@@ -72,6 +72,7 @@ String path = request.getContextPath();
 			     this.innerDoc.getElementById("small").value = $("#small").val();
 			     this.innerDoc.getElementById("big").value = $("#big").val();
 			     this.innerDoc.getElementById("update_date").value = $("#update_date").val();
+			     this.innerDoc.getElementById("ctime").value = $("#ctime").val();
            }
 			});    
 		}      
@@ -104,6 +105,7 @@ String path = request.getContextPath();
 			<input type="hidden" name="clientBean.small" id="small" value="${clientBean.small}"/> 
 			<input type="hidden" name="clientBean.big" id="big" value="${clientBean.big}"/> 
 			<input type="hidden" name="clientBean.updateDate" id="updateDate" value="${clientBean.updateDate}"/> 
+		   	<input type="hidden" name="clientBean.ctime" id="ctime" value="${clientBean.ctime}"/> 
 		   	<input type="hidden" name="sortname" value="${page.sortname}"/>    
 		   	<input type="hidden" name="sortorder"  value="${page.sortorder }"/>
 		   	<input type="hidden" name="pageSize" value="${page.pageSize}"/>    
@@ -112,19 +114,20 @@ String path = request.getContextPath();
 			   	 <thead>
 			   		<tr>  
 			   			<th><span><input type="checkbox" onClick="checkAll(this,'idArr')"  width="20"/></span></th>     
-			   			<th sortname="username" width="10%">登陆名</th>	   
+			   			<th sortname="username" width="5%">登陆名</th>	   
 			   			<th sortname="password" width="10%">密码</th>	   
 			   			<th sortname="email" width="10%">邮箱</th>	   
-			   			<th sortname="phone_number" width="10%">手机号</th>	   
-			   			<th sortname="birthday" width="10%">生日</th>	   
-			   			<th sortname="first_name" width="10%">名</th>	   
-			   			<th sortname="last_name" width="10%">姓</th>	   
-			   			<th sortname="render" width="10%">性别</th>	   
-			   			<th sortname="age" width="10%">年龄</th>	   
-			   			<th sortname="description" width="10%">描述</th>	   
+			   			<th sortname="phone_number" width="5%">手机号</th>	   
+			   			<th sortname="birthday" width="5%">生日</th>	   
+			   			<th sortname="first_name" width="5%">名</th>	   
+			   			<th sortname="last_name" width="5%">姓</th>	   
+			   			<th sortname="render" width="5%">性别</th>	   
+			   			<th sortname="age" width="5%">年龄</th>	   
+			   			<th sortname="description" width="20%">描述</th>	   
 			   			<th sortname="small" width="10%">小头像</th>	   
 			   			<th sortname="big" width="10%">大头像</th>	   
-			   			<th sortname="update_date" width="10%">更新时间</th>	   
+			   			<th sortname="update_date" width="25%">更新时间</th>
+			   			<th sortname="ctime" width="25%">注册时间</th>	   
 			   		</tr> 
 			   	</thead>
 			   	<tbody> 
@@ -143,7 +146,8 @@ String path = request.getContextPath();
 		   			 	 <td>${map.description}</td>    
 		   			 	 <td>${map.small}</td>    
 		   			 	 <td>${map.big}</td>    
-		   			 	 <td>${map.update_date}</td>    
+		   			 	 <td>${map.update_date}</td>
+		   			 	 <td>${map.ctime}</td>        
 		   			 </tr>
 		   			 </s:iterator> 	    
 		   		</tbody>		    		  

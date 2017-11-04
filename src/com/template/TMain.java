@@ -12,11 +12,11 @@ public class TMain {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String packageName = "com.memberManage";
+		String packageName = "com.device";
 		String[] pakageArr = packageName.split("\\.");
 		String folderName=pakageArr[pakageArr.length-1];
 		String schema="point";
-		String tableName = "client";//fault_bill
+		String tableName = "device";//fault_bill
 		String path = "d:\\work1\\template\\"+packageName;
 		File f = new File(path);
 		if(!f.exists()) {

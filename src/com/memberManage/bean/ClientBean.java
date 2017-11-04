@@ -94,7 +94,15 @@ public class ClientBean {
 	*/
 	@Column(name="update_date")
 	private Long updateDate;
+    
+	
+	/**
+	 * 更新时间 
+	*/
+	@Column(name="ctime")
+	private Long ctime;
     	
+	
     /** 
      * id
      * @return 
@@ -318,5 +326,21 @@ public class ClientBean {
     public void setUpdateDate(Long updateDate) {
     	this.updateDate = updateDate;
     }
-    	
+    
+    
+    /** 
+     * 注册时间
+     * @return 
+     */ 
+    public Long getCtime() {
+    	return ctime;
+    }
+    
+    /** 
+     * 注册时间
+     * @param 
+     */ 
+    public void setCtime(Long ctime) {
+    	this.ctime = ctime;
+    }
 }

@@ -73,6 +73,9 @@ String path = request.getContextPath();
 			    },                              
 			    "clientBean.updateDate":{            
 			        number:true,range:[0,9999999999]
+			    },
+			    "clientBean.ctime":{            
+			        number:true,range:[0,9999999999]
 			    }                              
 			},                                  
 			messages:{                          
@@ -181,6 +184,16 @@ String path = request.getContextPath();
         </td>                            
         <td>                             
             <input type="text" name="clientBean.updateDate" id="updateDate"  value="${clientBean.updateDate}" class="GF-field"/>   
+        </td>                            
+    	<td align="right" width="20%">&nbsp;</td> 
+    	<td></td>                        
+  </tr>
+    <tr>                                    
+    	<td align="right"  > 
+                            注册时间<span class="mark"></span>   
+        </td>                            
+        <td>                             
+            <input type="text" name="clientBean.ctime" id="ctime"  value="${clientBean.ctime}" class="GF-field"/>   
         </td>                            
     	<td align="right" width="20%">&nbsp;</td> 
     	<td></td>                        
