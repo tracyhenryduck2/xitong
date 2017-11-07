@@ -34,13 +34,12 @@ public class SocketThread extends Thread
 					break;
 			    }
 				Socket socket = serverSocket.accept(); 
+
 				if(null != socket && !socket.isClosed()){
 					System.out.println("SocketThread创建了一个socket"); 
 					//处理接受的数据 
 					Thread t = new Thread(new SocketOperate(socket)); 
 					t.start(); 
-				}else{
-				  break;
 				}
 			}catch (Exception e) { 
 				System.out.println("SocketThread创建socket服务出错"); 

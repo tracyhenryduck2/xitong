@@ -16,7 +16,7 @@ public class SocketOperate implements Runnable {
 	public SocketOperate(Socket socket) throws IOException 
 	{ 
 		this.socket = socket; 
-		reader = new InputStreamReader(this.socket.getInputStream(),"utf-8"); 
+		reader = new InputStreamReader(this.socket.getInputStream(),"gbk"); 
 		br = new BufferedReader(reader); 
 	}
 
@@ -28,14 +28,16 @@ public class SocketOperate implements Runnable {
 			// 采用循环不断从Socket中读取客户端发送过来的数据 
 			while (true) 
 			{ 
+
 				content = readFromClient(); 
 				System.out.println(content);
+				
 				if (content == null) 
 					{ 
 						break; 
 					} 
 				OutputStream os = socket.getOutputStream(); 
-				os.write(("RES, OK,<年班,小明>, ,#" + "\n").getBytes("utf-8")); 
+				os.write(("RES, OK,<年班,小明>, ,#" + "\n").getBytes("gbk")); 
 				os.flush();
 			} 
 		} 
@@ -49,8 +51,10 @@ public class SocketOperate implements Runnable {
 	private String readFromClient() 
 	{ 
 		try
-		{ 
+		{   
+
 			str = br.readLine(); 
+
 			return str; 
 		} 
 		//如果捕捉到异常，表明该Socket对应的客户端已经关闭 
