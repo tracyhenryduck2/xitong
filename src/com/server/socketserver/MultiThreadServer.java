@@ -53,36 +53,24 @@ class Handler implements Runnable {
         this.socket = socket;
     }
 
-    private PrintWriter getWriter(Socket socket) throws IOException {
-        OutputStream socketOut = socket.getOutputStream();
-        return new PrintWriter(socketOut, true);
-    }
 
     private BufferedReader getReader(Socket socket) throws IOException {
         InputStream socketIn = socket.getInputStream();
-        return new BufferedReader(new InputStreamReader(socketIn));
+        return new BufferedReader(new InputStreamReader(socketIn,"gbk"));
     }
 
     public void run() {
         BufferedReader br = null;
-        PrintWriter out = null;
+		OutputStream os = null; 
         try {
             br = getReader(socket);
-
-            out = getWriter(socket);
             String msg = null;
             while ((msg = br.readLine()) != null) {
-                System.out.println("s1:" + msg);
-                msg = Util.decode(msg,CHARCODE);
-                System.out.println("s2:" + msg);
+                System.out.println("接收到:" + msg);
 
-                String res = "wwwwwwwwwwww哈哈w1241243123";
-                res = Util.encode(res.getBytes(CHARCODE));
-                System.out.println("s1:" + res);
-                System.out.println("s2:" + Util.decode(res,CHARCODE));
-
-                out.println(res);
-                out.flush();
+				os = socket.getOutputStream(); 
+				os.write(("RES, OK,<年班,小明>, ,#" + "\n").getBytes("gbk")); 
+				os.flush();
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -99,9 +87,15 @@ class Handler implements Runnable {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            if (out != null) {
-                out.close();
+            if(os!=null){
+            	try {
+					os.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
+            
         }
     }
 
