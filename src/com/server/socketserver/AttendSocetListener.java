@@ -1,18 +1,21 @@
 package com.server.socketserver;
 
+import java.io.IOException;
+
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 public class AttendSocetListener implements ServletContextListener{
-    private SocketThread socketThread;
+   // private SocketThread socketThread;
+    private MultiThreadServer multiThreadServer;
     
     
 	public void contextDestroyed(ServletContextEvent arg) { 
 		
 		System.out.println("contextDestroyed");
-		if(null!=socketThread && !socketThread.isInterrupted()) 
+		if(null!=multiThreadServer && !multiThreadServer.isInterrupted()) 
 		{ 
-			socketThread.closeSocketServer(); 
-			socketThread.interrupt(); 
+			multiThreadServer.closeSocketServer(); 
+			multiThreadServer.interrupt(); 
 		} 
 	}
 	
@@ -21,12 +24,16 @@ public class AttendSocetListener implements ServletContextListener{
 	public void contextInitialized(ServletContextEvent arg) { 
 	// TODO Auto-generated method stub 
 		System.out.println("contextInitialized");
-		if(null==socketThread) 
+		if(null==multiThreadServer) 
 		{ 
 			//新建线程类 
-			socketThread=new SocketThread(null); 
-			//启动线程 
-			socketThread.start(); 
+			try {
+				multiThreadServer=new MultiThreadServer();
+				multiThreadServer.start();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
 		} 
 	} 
 }

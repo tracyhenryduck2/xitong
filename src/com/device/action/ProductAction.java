@@ -2,47 +2,47 @@ package com.device.action;
 
 import java.util.List;
 import java.util.Map;
-import com.device.bean.DeviceTypeBean;
-import com.device.dao.DeviceTypeDAO;
+import com.device.bean.ProductBean;
+import com.device.dao.ProductDAO;
 import com.common.Common;
 import com.common.BaseActionSupport;
 
 /**
- * 设备种类
+ * 产品表
  * @author junjun.xue
  *
  */
-public class DeviceTypeAction extends BaseActionSupport {
+public class ProductAction extends BaseActionSupport {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-    private DeviceTypeDAO dao = new DeviceTypeDAO(); 
-    private DeviceTypeBean deviceTypeBean = new DeviceTypeBean();    
-    private final String tableDesc = "设备种类";
+    private ProductDAO dao = new ProductDAO(); 
+    private ProductBean productBean = new ProductBean();    
+    private final String tableDesc = "产品表";
     /**    
      * 转向添加页面  
      * @return  
      */    
-    public String toAddDeviceType() {
+    public String toAddProduct() {
         if ("1".equals(oper)) {   
-    	    deviceTypeBean = dao.select(DeviceTypeBean.class,deviceTypeBean.getId());  
+    	    productBean = dao.select(ProductBean.class,productBean.getId());  
     	}    
-    	return "toAddDeviceType";    
+    	return "toAddProduct";    
     } 
  
     /**    
      * 新增
      */    
-    public String addDeviceType() {  
+    public String addProduct() {  
         try {   
             showMessage = "新增"+tableDesc; 
             boolean result = true;  
             if ("1".equals(oper)) {    
                 showMessage = "编辑"+tableDesc;  
-                result = dao.update(deviceTypeBean); 
+                result = dao.update(productBean); 
             } else { 
-                result = dao.insert(deviceTypeBean); 
+                result = dao.insert(productBean); 
             }
             if (result) {  
                 showMessage += "成功";  
@@ -66,7 +66,7 @@ public class DeviceTypeAction extends BaseActionSupport {
         String[] param={
             "id","name","pid","model","desp","img"
         };
-        boolean result=dao.update(deviceTypeBean,param);
+        boolean result=dao.update(productBean,param);
         if (result) { 
             showMessage += "成功";
             return reload_success;
@@ -78,9 +78,9 @@ public class DeviceTypeAction extends BaseActionSupport {
     /**    
      * 删除操作 
      */    
-    public String delDeviceType() {  
+    public String delProduct() {  
     	try {
-    		boolean result = dao.delete(DeviceTypeBean.class,deviceTypeBean.getId());  
+    		boolean result = dao.delete(ProductBean.class,productBean.getId());  
     		if (result) {
     		    showMessage = "删除"+tableDesc+"成功"; //reload   
     		    return reload_success;  
@@ -97,11 +97,11 @@ public class DeviceTypeAction extends BaseActionSupport {
     /**    
      * 删除操作 
      */    
-    public String delDeviceTypes() { 
+    public String delProducts() { 
     	try {
     		String[] idArr = request.getParameterValues("idArr");   
     		String ids = Common.array2String(idArr);   
-    		boolean result = dao.deletes(DeviceTypeBean.class,ids);
+    		boolean result = dao.deletes(ProductBean.class,ids);
     		if (result) {
     		    showMessage = "删除"+tableDesc+"成功"; //reload   
     		    return reload_success;  
@@ -123,16 +123,16 @@ public class DeviceTypeAction extends BaseActionSupport {
      */    
     public String list() {
     	page.execute(request, "ID", "desc");
-    	List<Map<String, Object>> list = dao.getPageList(page, deviceTypeBean);
+    	List<Map<String, Object>> list = dao.getPageList(page, productBean);
     	request.setAttribute("list", list);   
     	return "list";    
     } 
  
-    public DeviceTypeBean getDeviceTypeBean() { 
-    	return deviceTypeBean;    
+    public ProductBean getProductBean() { 
+    	return productBean;    
     } 
  
-    public void setDeviceTypeBean(DeviceTypeBean deviceTypeBean) {   
-    	this.deviceTypeBean = deviceTypeBean;
+    public void setProductBean(ProductBean productBean) {   
+    	this.productBean = productBean;
     } 
 }

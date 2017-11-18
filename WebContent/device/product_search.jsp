@@ -23,24 +23,24 @@ String path = request.getContextPath();
 		/* form1表单进行验证 */               
 		$("#form1").validate({              
 			rules:{                             
-			    "deviceTypeBean.name":{            
+			    "productBean.name":{            
 			        CNRangeLength:[0,45]
 			    },                              
-			    "deviceTypeBean.pid":{            
+			    "productBean.pid":{            
 			        CNRangeLength:[0,255]
 			    },                              
-			    "deviceTypeBean.model":{            
+			    "productBean.model":{            
 			        CNRangeLength:[0,45]
 			    },                              
-			    "deviceTypeBean.desp":{            
+			    "productBean.desp":{            
 			        CNRangeLength:[0,4294967295]
 			    },                              
-			    "deviceTypeBean.img":{            
+			    "productBean.img":{            
 			        CNRangeLength:[0,255]
 			    }                              
 			},                                  
 			messages:{                          
-//			    "deviceTypeBean.code":{          
+//			    "productBean.code":{          
 //				    required : "",CNRangeLength:""  
 //			    },                            
 			}                                   
@@ -57,7 +57,7 @@ String path = request.getContextPath();
                             设备型号名称<span class="mark"></span>   
         </td>                            
         <td>                             
-            <input type="text" name="deviceTypeBean.name" id="name"  value="${deviceTypeBean.name}" class="GF-field"/>   
+            <input type="text" name="productBean.name" id="name"  value="${productBean.name}" class="GF-field"/>   
         </td>                            
   </tr>                                
   <tr>                                    
@@ -65,7 +65,7 @@ String path = request.getContextPath();
                             设备种类标识<span class="mark"></span>   
         </td>                            
         <td>                             
-            <input type="text" name="deviceTypeBean.pid" id="pid"  value="${deviceTypeBean.pid}" class="GF-field"/>   
+            <input type="text" name="productBean.pid" id="pid"  value="${productBean.pid}" class="GF-field"/>   
         </td>                            
   </tr>                                
   <tr>                                    
@@ -73,7 +73,7 @@ String path = request.getContextPath();
                             设备型号<span class="mark"></span>   
         </td>                            
         <td>                             
-            <input type="text" name="deviceTypeBean.model" id="model"  value="${deviceTypeBean.model}" class="GF-field"/>   
+            <input type="text" name="productBean.model" id="model"  value="${productBean.model}" class="GF-field"/>   
         </td>                            
   </tr>                                
   <tr>                                    
@@ -81,7 +81,7 @@ String path = request.getContextPath();
                             介绍<span class="mark"></span>   
         </td>                            
         <td>                             
-            <input type="text" name="deviceTypeBean.desp" id="desp"  value="${deviceTypeBean.desp}" class="GF-field"/>   
+            <input type="text" name="productBean.desp" id="desp"  value="${productBean.desp}" class="GF-field"/>   
         </td>                            
   </tr>                                
   <tr>                                    
@@ -89,7 +89,7 @@ String path = request.getContextPath();
                             产品图片<span class="mark"></span>   
         </td>                            
         <td>                             
-            <input type="text" name="deviceTypeBean.img" id="img"  value="${deviceTypeBean.img}" class="GF-field"/>   
+            <input type="text" name="productBean.img" id="img"  value="${productBean.img}" class="GF-field"/>   
         </td>                            
   </tr>                                
   <tr>                                

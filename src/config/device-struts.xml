@@ -9,11 +9,16 @@
    <!--  <constant name="struts.devMode" value="false" /> -->
    <package name="device" extends="login.interceptor"
 		namespace="/device">
-			<action name="DeviceType" class="com.device.action.DeviceTypeAction">
-		 		<result name="toAddDeviceType">/device/deviceType_edit.jsp</result>
-		 		<result name="list">/device/deviceType_list.jsp</result>
-		 		<result name="search">/device/deviceType_search.jsp</result>
-	        </action>
+	        <action name="Product" class="com.device.action.ProductAction">
+		 		<result name="toAddProduct">/device/product_edit.jsp</result>
+		 		<result name="list">/device/product_list.jsp</result>
+		 		<result name="search">/device/product_search.jsp</result>
+            </action>
+            <action name="Device" class="com.device.action.DeviceAction">
+			 		<result name="toAddDevice">/device/device_edit.jsp</result>
+			 		<result name="list">/device/device_list.jsp</result>
+			 		<result name="search">/device/device_search.jsp</result>
+           </action>
 	</package>
 		
 </struts>

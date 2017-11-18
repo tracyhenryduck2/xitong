@@ -4,12 +4,12 @@ import com.avatar.db.annotation.*;
 import com.common.*;
 
 /**
- * 设备种类
+ * 产品表
  * @author junjun.xue
  *
  */
-@Table(name="device_type")
-public class DeviceTypeBean {
+@Table(name="product")
+public class ProductBean {
 
 	/**
 	 *  
