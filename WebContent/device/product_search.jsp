@@ -10,7 +10,7 @@ String path = request.getContextPath();
 <script type="text/javascript">        
 	function search(){                          
 			Dialog.opener().document.getElementById("name").value = $("#name").val()||"";    
-			Dialog.opener().document.getElementById("pid").value = $("#pid").val()||"";    
+			Dialog.opener().document.getElementById("prodKey").value = $("#prodKey").val()||"";    
 			Dialog.opener().document.getElementById("model").value = $("#model").val()||"";    
 			Dialog.opener().document.getElementById("desp").value = $("#desp").val()||"";    
 			Dialog.opener().document.getElementById("img").value = $("#img").val()||"";    
@@ -26,7 +26,7 @@ String path = request.getContextPath();
 			    "productBean.name":{            
 			        CNRangeLength:[0,45]
 			    },                              
-			    "productBean.pid":{            
+			    "productBean.prodKey":{            
 			        CNRangeLength:[0,255]
 			    },                              
 			    "productBean.model":{            
@@ -65,7 +65,7 @@ String path = request.getContextPath();
                             设备种类标识<span class="mark"></span>   
         </td>                            
         <td>                             
-            <input type="text" name="productBean.pid" id="pid"  value="${productBean.pid}" class="GF-field"/>   
+            <input type="text" name="productBean.prodKey" id="prodKey"  value="${productBean.prodKey}" class="GF-field"/>   
         </td>                            
   </tr>                                
   <tr>                                    

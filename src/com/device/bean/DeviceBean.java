@@ -20,8 +20,8 @@ public class DeviceBean {
 	/**
 	 * 设备id 
 	*/
-	@Column(name="deviceid")
-	private String deviceid;
+	@Column(name="dev_tid")
+	private String devTid;
 
 	/**
 	 * 设备token 
@@ -32,14 +32,14 @@ public class DeviceBean {
 	/**
 	 * 控制码 
 	*/
-	@Column(name="ctrlkey")
-	private String ctrlkey;
+	@Column(name="ctrl_key")
+	private String ctrlKey;
 
 	/**
 	 * 绑定码 
 	*/
-	@Column(name="bindkey")
-	private String bindkey;
+	@Column(name="bind_key")
+	private String bindKey;
 
 	/**
 	 * 设备mac地址 
@@ -50,14 +50,14 @@ public class DeviceBean {
 	/**
 	 * 设备固件版本号 
 	*/
-	@Column(name="binver")
-	private String binver;
+	@Column(name="bin_ver")
+	private String binVer;
 
 	/**
 	 * 设备固件类型A,B 
 	*/
-	@Column(name="bintype")
-	private String bintype;
+	@Column(name="bin_type")
+	private String binType;
 
 	/**
 	 * 设备ip 
@@ -82,6 +82,12 @@ public class DeviceBean {
 	*/
 	@Column(name="name")
 	private String name;
+
+	/**
+	 * wifi名称 
+	*/
+	@Column(name="ssid")
+	private String ssid;
     	
     /** 
      * 
@@ -103,16 +109,16 @@ public class DeviceBean {
      * 设备id
      * @return 
      */ 
-    public String getDeviceid() {
-    	return deviceid;
+    public String getDevTid() {
+    	return devTid;
     }
     
     /** 
      * 设备id
      * @param 
      */ 
-    public void setDeviceid(String deviceid) {
-    	this.deviceid = deviceid;
+    public void setDevTid(String devTid) {
+    	this.devTid = devTid;
     }
     	
     /** 
@@ -135,32 +141,32 @@ public class DeviceBean {
      * 控制码
      * @return 
      */ 
-    public String getCtrlkey() {
-    	return ctrlkey;
+    public String getCtrlKey() {
+    	return ctrlKey;
     }
     
     /** 
      * 控制码
      * @param 
      */ 
-    public void setCtrlkey(String ctrlkey) {
-    	this.ctrlkey = ctrlkey;
+    public void setCtrlKey(String ctrlKey) {
+    	this.ctrlKey = ctrlKey;
     }
     	
     /** 
      * 绑定码
      * @return 
      */ 
-    public String getBindkey() {
-    	return bindkey;
+    public String getBindKey() {
+    	return bindKey;
     }
     
     /** 
      * 绑定码
      * @param 
      */ 
-    public void setBindkey(String bindkey) {
-    	this.bindkey = bindkey;
+    public void setBindKey(String bindKey) {
+    	this.bindKey = bindKey;
     }
     	
     /** 
@@ -183,32 +189,32 @@ public class DeviceBean {
      * 设备固件版本号
      * @return 
      */ 
-    public String getBinver() {
-    	return binver;
+    public String getBinVer() {
+    	return binVer;
     }
     
     /** 
      * 设备固件版本号
      * @param 
      */ 
-    public void setBinver(String binver) {
-    	this.binver = binver;
+    public void setBinVer(String binVer) {
+    	this.binVer = binVer;
     }
     	
     /** 
      * 设备固件类型A,B
      * @return 
      */ 
-    public String getBintype() {
-    	return bintype;
+    public String getBinType() {
+    	return binType;
     }
     
     /** 
      * 设备固件类型A,B
      * @param 
      */ 
-    public void setBintype(String bintype) {
-    	this.bintype = bintype;
+    public void setBinType(String binType) {
+    	this.binType = binType;
     }
     	
     /** 
@@ -274,13 +280,20 @@ public class DeviceBean {
     public void setName(String name) {
     	this.name = name;
     }
-
-	@Override
-	public String toString() {
-		return "DeviceBean [id=" + id + ", deviceid=" + deviceid + ", token=" + token + ", ctrlkey=" + ctrlkey
-				+ ", bindkey=" + bindkey + ", mac=" + mac + ", binver=" + binver + ", bintype=" + bintype + ", ip=" + ip
-				+ ", online=" + online + ", pid=" + pid + ", name=" + name + "]";
-	}
+    	
+    /** 
+     * wifi名称
+     * @return 
+     */ 
+    public String getSsid() {
+    	return ssid;
+    }
     
-    
+    /** 
+     * wifi名称
+     * @param 
+     */ 
+    public void setSsid(String ssid) {
+    	this.ssid = ssid;
+    }
 }

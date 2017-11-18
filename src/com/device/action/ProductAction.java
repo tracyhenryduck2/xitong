@@ -64,7 +64,7 @@ public class ProductAction extends BaseActionSupport {
     public String addTest2(){
         showMessage = "编辑2"+tableDesc;
         String[] param={
-            "id","name","pid","model","desp","img"
+            "id","name","prodKey","model","desp","img"
         };
         boolean result=dao.update(productBean,param);
         if (result) { 

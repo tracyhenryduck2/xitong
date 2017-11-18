@@ -33,9 +33,9 @@ public class ProductDAO extends BaseDAO {
     			objectList.add(productBean.getName());
     			sqlWhere += " AND a.name = ? ";
     		} 
-    		if(productBean.getPid() != null && productBean.getPid().trim().length()>0) { 
-    			objectList.add(productBean.getPid());
-    			sqlWhere += " AND a.pid = ? ";
+    		if(productBean.getProdKey() != null && productBean.getProdKey().trim().length()>0) { 
+    			objectList.add(productBean.getProdKey());
+    			sqlWhere += " AND a.prod_key = ? ";
     		} 
     		if(productBean.getModel() != null && productBean.getModel().trim().length()>0) { 
     			objectList.add(productBean.getModel());
@@ -60,10 +60,10 @@ public class ProductDAO extends BaseDAO {
     	return list;      
     }
     
-    public List<Map<String,Object>> getProductList(){
-    	
+    public List<Map<String,Object>> getList(){
     	String sql = "select id,name from product";
     	return j.queryForList(sql);
     	
     }
+    
 }                       

@@ -26,8 +26,8 @@ public class ProductBean {
 	/**
 	 * 设备种类标识 
 	*/
-	@Column(name="pid")
-	private String pid;
+	@Column(name="prod_key")
+	private String prodKey;
 
 	/**
 	 * 设备型号 
@@ -83,16 +83,16 @@ public class ProductBean {
      * 设备种类标识
      * @return 
      */ 
-    public String getPid() {
-    	return pid;
+    public String getProdKey() {
+    	return prodKey;
     }
     
     /** 
      * 设备种类标识
      * @param 
      */ 
-    public void setPid(String pid) {
-    	this.pid = pid;
+    public void setProdKey(String prodKey) {
+    	this.prodKey = prodKey;
     }
     	
     /** 

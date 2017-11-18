@@ -35,26 +35,26 @@ String path = request.getContextPath();
 		/* form1表单进行验证 */               
 		$("#form1").validate({              
 			rules:{                             
-			    "deviceBean.deviceid":{            
+			    "deviceBean.devTid":{            
 			        required : true,CNRangeLength:[0,45]
 			    },                              
 			    "deviceBean.token":{            
 			        required : true,CNRangeLength:[0,255]
 			    },                              
-			    "deviceBean.ctrlkey":{            
+			    "deviceBean.ctrlKey":{            
 			        required : true,CNRangeLength:[0,255]
 			    },                              
-			    "deviceBean.bindkey":{            
+			    "deviceBean.bindKey":{            
 			        required : true,CNRangeLength:[0,255]
 			    },                              
 			    "deviceBean.mac":{            
-			        required : true,CNRangeLength:[0,45]
+			        CNRangeLength:[0,45]
 			    },                              
-			    "deviceBean.binver":{            
-			        required : true,CNRangeLength:[0,45]
+			    "deviceBean.binVer":{            
+			        CNRangeLength:[0,45]
 			    },                              
-			    "deviceBean.bintype":{            
-			        required : true,CNRangeLength:[0,2]
+			    "deviceBean.binType":{            
+			        CNRangeLength:[0,2]
 			    },                              
 			    "deviceBean.ip":{            
 			        required : true,CNRangeLength:[0,45]
@@ -67,6 +67,9 @@ String path = request.getContextPath();
 			    },                              
 			    "deviceBean.name":{            
 			        required : true,CNRangeLength:[0,45]
+			    },                              
+			    "deviceBean.ssid":{            
+			        CNRangeLength:[0,255]
 			    }                              
 			},                                  
 			messages:{                          
@@ -90,7 +93,7 @@ String path = request.getContextPath();
                             设备id<span class="mark">*</span>   
         </td>                            
         <td>                             
-            <input type="text" name="deviceBean.deviceid" id="deviceid"  value="${deviceBean.deviceid}" class="GF-field"/>   
+            <input type="text" name="deviceBean.devTid" id="devTid"  value="${deviceBean.devTid}" class="GF-field"/>   
         </td>                            
     	<td align="right" width="20%" > 
                             设备token<span class="mark">*</span>   
@@ -104,35 +107,35 @@ String path = request.getContextPath();
                             控制码<span class="mark">*</span>   
         </td>                            
         <td>                             
-            <input type="text" name="deviceBean.ctrlkey" id="ctrlkey"  value="${deviceBean.ctrlkey}" class="GF-field"/>   
+            <input type="text" name="deviceBean.ctrlKey" id="ctrlKey"  value="${deviceBean.ctrlKey}" class="GF-field"/>   
         </td>                            
     	<td align="right"  > 
                             绑定码<span class="mark">*</span>   
         </td>                            
         <td>                             
-            <input type="text" name="deviceBean.bindkey" id="bindkey"  value="${deviceBean.bindkey}" class="GF-field"/>   
+            <input type="text" name="deviceBean.bindKey" id="bindKey"  value="${deviceBean.bindKey}" class="GF-field"/>   
         </td>                            
   </tr>                                
   <tr>                                    
     	<td align="right"  > 
-                            设备mac地址<span class="mark">*</span>   
+                            设备mac地址<span class="mark"></span>   
         </td>                            
         <td>                             
             <input type="text" name="deviceBean.mac" id="mac"  value="${deviceBean.mac}" class="GF-field"/>   
         </td>                            
     	<td align="right"  > 
-                            设备固件版本号<span class="mark">*</span>   
+                            设备固件版本号<span class="mark"></span>   
         </td>                            
         <td>                             
-            <input type="text" name="deviceBean.binver" id="binver"  value="${deviceBean.binver}" class="GF-field"/>   
+            <input type="text" name="deviceBean.binVer" id="binVer"  value="${deviceBean.binVer}" class="GF-field"/>   
         </td>                            
   </tr>                                
   <tr>                                    
     	<td align="right"  > 
-                            设备固件类型A,B<span class="mark">*</span>   
+                            设备固件类型A,B<span class="mark"></span>   
         </td>                            
         <td>                             
-            <input type="text" name="deviceBean.bintype" id="bintype"  value="${deviceBean.bintype}" class="GF-field"/>   
+            <input type="text" name="deviceBean.binType" id="binType"  value="${deviceBean.binType}" class="GF-field"/>   
         </td>                            
     	<td align="right"  > 
                             设备ip<span class="mark">*</span>   
@@ -162,8 +165,12 @@ String path = request.getContextPath();
         <td>                             
             <input type="text" name="deviceBean.name" id="name"  value="${deviceBean.name}" class="GF-field"/>   
         </td>                            
-    	<td align="right" width="20%">&nbsp;</td> 
-    	<td></td>                        
+    	<td align="right"  > 
+                            wifi名称<span class="mark"></span>   
+        </td>                            
+        <td>                             
+            <input type="text" name="deviceBean.ssid" id="ssid"  value="${deviceBean.ssid}" class="GF-field"/>   
+        </td>                            
   </tr>                                
   <tr>                                
       <td>&nbsp;</td>		

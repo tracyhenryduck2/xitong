@@ -29,33 +29,33 @@ public class DeviceDAO extends BaseDAO {
     			objectList.add(deviceBean.getId());
     			sqlWhere += " AND a.id = ? ";
     		} 
-    		if(deviceBean.getDeviceid() != null && deviceBean.getDeviceid().trim().length()>0) { 
-    			objectList.add(deviceBean.getDeviceid());
-    			sqlWhere += " AND a.deviceid = ? ";
+    		if(deviceBean.getDevTid() != null && deviceBean.getDevTid().trim().length()>0) { 
+    			objectList.add(deviceBean.getDevTid());
+    			sqlWhere += " AND a.dev_tid = ? ";
     		} 
     		if(deviceBean.getToken() != null && deviceBean.getToken().trim().length()>0) { 
     			objectList.add(deviceBean.getToken());
     			sqlWhere += " AND a.token = ? ";
     		} 
-    		if(deviceBean.getCtrlkey() != null && deviceBean.getCtrlkey().trim().length()>0) { 
-    			objectList.add(deviceBean.getCtrlkey());
-    			sqlWhere += " AND a.ctrlkey = ? ";
+    		if(deviceBean.getCtrlKey() != null && deviceBean.getCtrlKey().trim().length()>0) { 
+    			objectList.add(deviceBean.getCtrlKey());
+    			sqlWhere += " AND a.ctrl_key = ? ";
     		} 
-    		if(deviceBean.getBindkey() != null && deviceBean.getBindkey().trim().length()>0) { 
-    			objectList.add(deviceBean.getBindkey());
-    			sqlWhere += " AND a.bindkey = ? ";
+    		if(deviceBean.getBindKey() != null && deviceBean.getBindKey().trim().length()>0) { 
+    			objectList.add(deviceBean.getBindKey());
+    			sqlWhere += " AND a.bind_key = ? ";
     		} 
     		if(deviceBean.getMac() != null && deviceBean.getMac().trim().length()>0) { 
     			objectList.add(deviceBean.getMac());
     			sqlWhere += " AND a.mac = ? ";
     		} 
-    		if(deviceBean.getBinver() != null && deviceBean.getBinver().trim().length()>0) { 
-    			objectList.add(deviceBean.getBinver());
-    			sqlWhere += " AND a.binver = ? ";
+    		if(deviceBean.getBinVer() != null && deviceBean.getBinVer().trim().length()>0) { 
+    			objectList.add(deviceBean.getBinVer());
+    			sqlWhere += " AND a.bin_ver = ? ";
     		} 
-    		if(deviceBean.getBintype() != null && deviceBean.getBintype().trim().length()>0) { 
-    			objectList.add(deviceBean.getBintype());
-    			sqlWhere += " AND a.bintype = ? ";
+    		if(deviceBean.getBinType() != null && deviceBean.getBinType().trim().length()>0) { 
+    			objectList.add(deviceBean.getBinType());
+    			sqlWhere += " AND a.bin_type = ? ";
     		} 
     		if(deviceBean.getIp() != null && deviceBean.getIp().trim().length()>0) { 
     			objectList.add(deviceBean.getIp());
@@ -72,6 +72,10 @@ public class DeviceDAO extends BaseDAO {
     		if(deviceBean.getName() != null && deviceBean.getName().trim().length()>0) { 
     			objectList.add(deviceBean.getName());
     			sqlWhere += " AND a.name = ? ";
+    		} 
+    		if(deviceBean.getSsid() != null && deviceBean.getSsid().trim().length()>0) { 
+    			objectList.add(deviceBean.getSsid());
+    			sqlWhere += " AND a.ssid = ? ";
     		} 
     	}                 
     	sql = sql + sqlWhere; 

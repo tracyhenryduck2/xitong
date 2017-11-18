@@ -59,17 +59,18 @@ String path = request.getContextPath();
 		}      
 		function search() {  
 			Dialog.open({Title:"查询", Width:650, Height:220, URL:"<%=path%>/device/Device!search.action",OnLoad:function(){
-			     this.innerDoc.getElementById("deviceid").value = $("#deviceid").val();
+			     this.innerDoc.getElementById("dev_tid").value = $("#dev_tid").val();
 			     this.innerDoc.getElementById("token").value = $("#token").val();
-			     this.innerDoc.getElementById("ctrlkey").value = $("#ctrlkey").val();
-			     this.innerDoc.getElementById("bindkey").value = $("#bindkey").val();
+			     this.innerDoc.getElementById("ctrl_key").value = $("#ctrl_key").val();
+			     this.innerDoc.getElementById("bind_key").value = $("#bind_key").val();
 			     this.innerDoc.getElementById("mac").value = $("#mac").val();
-			     this.innerDoc.getElementById("binver").value = $("#binver").val();
-			     this.innerDoc.getElementById("bintype").value = $("#bintype").val();
+			     this.innerDoc.getElementById("bin_ver").value = $("#bin_ver").val();
+			     this.innerDoc.getElementById("bin_type").value = $("#bin_type").val();
 			     this.innerDoc.getElementById("ip").value = $("#ip").val();
 			     this.innerDoc.getElementById("online").value = $("#online").val();
 			     this.innerDoc.getElementById("pid").value = $("#pid").val();
 			     this.innerDoc.getElementById("name").value = $("#name").val();
+			     this.innerDoc.getElementById("ssid").value = $("#ssid").val();
            }
 			});    
 		}      
@@ -89,17 +90,18 @@ String path = request.getContextPath();
 	</GF:ToolBar>   
     <form action="<%=path%>/device/Device!list.action" name="form1" id="form1" method="get">  
    
-			<input type="hidden" name="deviceBean.deviceid" id="deviceid" value="${deviceBean.deviceid}"/> 
+			<input type="hidden" name="deviceBean.devTid" id="devTid" value="${deviceBean.devTid}"/> 
 			<input type="hidden" name="deviceBean.token" id="token" value="${deviceBean.token}"/> 
-			<input type="hidden" name="deviceBean.ctrlkey" id="ctrlkey" value="${deviceBean.ctrlkey}"/> 
-			<input type="hidden" name="deviceBean.bindkey" id="bindkey" value="${deviceBean.bindkey}"/> 
+			<input type="hidden" name="deviceBean.ctrlKey" id="ctrlKey" value="${deviceBean.ctrlKey}"/> 
+			<input type="hidden" name="deviceBean.bindKey" id="bindKey" value="${deviceBean.bindKey}"/> 
 			<input type="hidden" name="deviceBean.mac" id="mac" value="${deviceBean.mac}"/> 
-			<input type="hidden" name="deviceBean.binver" id="binver" value="${deviceBean.binver}"/> 
-			<input type="hidden" name="deviceBean.bintype" id="bintype" value="${deviceBean.bintype}"/> 
+			<input type="hidden" name="deviceBean.binVer" id="binVer" value="${deviceBean.binVer}"/> 
+			<input type="hidden" name="deviceBean.binType" id="binType" value="${deviceBean.binType}"/> 
 			<input type="hidden" name="deviceBean.ip" id="ip" value="${deviceBean.ip}"/> 
 			<input type="hidden" name="deviceBean.online" id="online" value="${deviceBean.online}"/> 
 			<input type="hidden" name="deviceBean.pid" id="pid" value="${deviceBean.pid}"/> 
 			<input type="hidden" name="deviceBean.name" id="name" value="${deviceBean.name}"/> 
+			<input type="hidden" name="deviceBean.ssid" id="ssid" value="${deviceBean.ssid}"/> 
 		   	<input type="hidden" name="sortname" value="${page.sortname}"/>    
 		   	<input type="hidden" name="sortorder"  value="${page.sortorder }"/>
 		   	<input type="hidden" name="pageSize" value="${page.pageSize}"/>    
@@ -108,34 +110,36 @@ String path = request.getContextPath();
 			   	 <thead>
 			   		<tr>  
 			   			<th><span><input type="checkbox" onClick="checkAll(this,'idArr')"  width="20"/></span></th>     
-			   			<th sortname="deviceid" width="10%">设备id</th>	   
+			   			<th sortname="dev_tid" width="10%">设备id</th>	   
 			   			<th sortname="token" width="10%">设备token</th>	   
-			   			<th sortname="ctrlkey" width="10%">控制码</th>	   
-			   			<th sortname="bindkey" width="10%">绑定码</th>	   
+			   			<th sortname="ctrl_key" width="10%">控制码</th>	   
+			   			<th sortname="bind_key" width="10%">绑定码</th>	   
 			   			<th sortname="mac" width="10%">设备mac地址</th>	   
-			   			<th sortname="binver" width="10%">设备固件版本号</th>	   
-			   			<th sortname="bintype" width="10%">设备固件类型A,B</th>	   
+			   			<th sortname="bin_ver" width="10%">设备固件版本号</th>	   
+			   			<th sortname="bin_type" width="10%">设备固件类型A,B</th>	   
 			   			<th sortname="ip" width="10%">设备ip</th>	   
 			   			<th sortname="online" width="10%">是否在线</th>	   
 			   			<th sortname="pid" width="10%">设备种类id</th>	   
 			   			<th sortname="name" width="10%">设备名称</th>	   
+			   			<th sortname="ssid" width="10%">wifi名称</th>	   
 			   		</tr> 
 			   	</thead>
 			   	<tbody> 
 			   		<s:iterator value="#request.list" id="map"> 
 		   			 <tr> 
 		   			 	 <td align="left"><input type="checkbox" name="idArr"  value="${map.id}"/></td> 
-		   			 	 <td>${map.deviceid}</td>    
+		   			 	 <td>${map.dev_tid}</td>    
 		   			 	 <td>${map.token}</td>    
-		   			 	 <td>${map.ctrlkey}</td>    
-		   			 	 <td>${map.bindkey}</td>    
+		   			 	 <td>${map.ctrl_key}</td>    
+		   			 	 <td>${map.bind_key}</td>    
 		   			 	 <td>${map.mac}</td>    
-		   			 	 <td>${map.binver}</td>    
-		   			 	 <td>${map.bintype}</td>    
+		   			 	 <td>${map.bin_ver}</td>    
+		   			 	 <td>${map.bin_type}</td>    
 		   			 	 <td>${map.ip}</td>    
 		   			 	 <td>${map.online}</td>    
 		   			 	 <td>${map.pid}</td>    
 		   			 	 <td>${map.name}</td>    
+		   			 	 <td>${map.ssid}</td>    
 		   			 </tr>
 		   			 </s:iterator> 	    
 		   		</tbody>		    		  

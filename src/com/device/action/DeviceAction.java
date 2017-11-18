@@ -19,7 +19,7 @@ public class DeviceAction extends BaseActionSupport {
 	 */
 	private static final long serialVersionUID = 1L;
     private DeviceDAO dao = new DeviceDAO(); 
-    private ProductDAO productdao = new ProductDAO();
+    private ProductDAO DAO = new ProductDAO(); 
     private DeviceBean deviceBean = new DeviceBean();    
     private final String tableDesc = "设备表";
     /**    
@@ -27,9 +27,8 @@ public class DeviceAction extends BaseActionSupport {
      * @return  
      */    
     public String toAddDevice() {
-    	
-    	List<Map<String,Object>> lsit = productdao.getProductList();
-    	request.setAttribute("List", lsit);
+        List<Map<String, Object>> List = DAO.getList();
+        request.setAttribute("List", List);
         if ("1".equals(oper)) {   
     	    deviceBean = dao.select(DeviceBean.class,deviceBean.getId());  
     	}    
@@ -69,9 +68,9 @@ public class DeviceAction extends BaseActionSupport {
     public String addTest2(){
         showMessage = "编辑2"+tableDesc;
         String[] param={
-            "id","deviceid","token","ctrlkey","bindkey","mac"
-            ,"binver","bintype","ip","online","pid"
-            ,"name"
+            "id","devTid","token","ctrlKey","bindKey","mac"
+            ,"binVer","binType","ip","online","pid"
+            ,"name","ssid"
         };
         boolean result=dao.update(deviceBean,param);
         if (result) { 

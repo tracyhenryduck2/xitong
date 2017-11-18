@@ -60,7 +60,7 @@ String path = request.getContextPath();
 		function search() {  
 			Dialog.open({Title:"查询", Width:650, Height:220, URL:"<%=path%>/device/Product!search.action",OnLoad:function(){
 			     this.innerDoc.getElementById("name").value = $("#name").val();
-			     this.innerDoc.getElementById("pid").value = $("#pid").val();
+			     this.innerDoc.getElementById("prod_key").value = $("#prod_key").val();
 			     this.innerDoc.getElementById("model").value = $("#model").val();
 			     this.innerDoc.getElementById("desp").value = $("#desp").val();
 			     this.innerDoc.getElementById("img").value = $("#img").val();
@@ -84,7 +84,7 @@ String path = request.getContextPath();
     <form action="<%=path%>/device/Product!list.action" name="form1" id="form1" method="get">  
    
 			<input type="hidden" name="productBean.name" id="name" value="${productBean.name}"/> 
-			<input type="hidden" name="productBean.pid" id="pid" value="${productBean.pid}"/> 
+			<input type="hidden" name="productBean.prodKey" id="prodKey" value="${productBean.prodKey}"/> 
 			<input type="hidden" name="productBean.model" id="model" value="${productBean.model}"/> 
 			<input type="hidden" name="productBean.desp" id="desp" value="${productBean.desp}"/> 
 			<input type="hidden" name="productBean.img" id="img" value="${productBean.img}"/> 
@@ -97,7 +97,7 @@ String path = request.getContextPath();
 			   		<tr>  
 			   			<th><span><input type="checkbox" onClick="checkAll(this,'idArr')"  width="20"/></span></th>     
 			   			<th sortname="name" width="10%">设备型号名称</th>	   
-			   			<th sortname="pid" width="10%">设备种类标识</th>	   
+			   			<th sortname="prod_key" width="10%">设备种类标识</th>	   
 			   			<th sortname="model" width="10%">设备型号</th>	   
 			   			<th sortname="desp" width="10%">介绍</th>	   
 			   			<th sortname="img" width="10%">产品图片</th>	   
@@ -108,7 +108,7 @@ String path = request.getContextPath();
 		   			 <tr> 
 		   			 	 <td align="left"><input type="checkbox" name="idArr"  value="${map.id}"/></td> 
 		   			 	 <td>${map.name}</td>    
-		   			 	 <td>${map.pid}</td>    
+		   			 	 <td>${map.prod_key}</td>    
 		   			 	 <td>${map.model}</td>    
 		   			 	 <td>${map.desp}</td>    
 		   			 	 <td>${map.img}</td>    
