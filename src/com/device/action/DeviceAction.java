@@ -70,7 +70,7 @@ public class DeviceAction extends BaseActionSupport {
         String[] param={
             "id","devTid","token","ctrlKey","bindKey","mac"
             ,"binVer","binType","ip","online","pid"
-            ,"name","ssid"
+            ,"name","ssid","ctime"
         };
         boolean result=dao.update(deviceBean,param);
         if (result) { 

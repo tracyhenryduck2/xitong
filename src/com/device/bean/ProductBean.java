@@ -46,6 +46,18 @@ public class ProductBean {
 	*/
 	@Column(name="img")
 	private String img;
+
+	/**
+	 * 是否强制绑定 
+	*/
+	@Column(name="force_bind")
+	private Long forceBind;
+
+	/**
+	 * 生成时间 
+	*/
+	@Column(name="ctime")
+	private Long ctime;
     	
     /** 
      * 
@@ -142,4 +154,37 @@ public class ProductBean {
     public void setImg(String img) {
     	this.img = img;
     }
+    	
+    /** 
+     * 是否强制绑定
+     * @return 
+     */ 
+    public Long getForceBind() {
+    	return forceBind;
+    }
+    
+    /** 
+     * 是否强制绑定
+     * @param 
+     */ 
+    public void setForceBind(Long forceBind) {
+    	this.forceBind = forceBind;
+    }
+    	
+    /** 
+     * 生成时间
+     * @return 
+     */ 
+    public Long getCtime() {
+    	return ctime;
+    }
+    
+    /** 
+     * 生成时间
+     * @param 
+     */ 
+    public void setCtime(Long ctime) {
+    	this.ctime = ctime;
+    }
+    	
 }

@@ -15,6 +15,10 @@ public class AppLoginParamBean {
 		public void setToken(String token) {
 			this.token = token;
 		}
+		@Override
+		public String toString() {
+			return "AppLoginParamBean [appTid=" + appTid + ", token=" + token + "]";
+		}
         
         
 }

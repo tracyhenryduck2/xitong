@@ -1,10 +1,12 @@
 package com.device.action;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import com.device.bean.ProductBean;
 import com.device.dao.ProductDAO;
 import com.common.Common;
+import com.common.MD5;
 import com.common.BaseActionSupport;
 
 /**
@@ -41,8 +43,11 @@ public class ProductAction extends BaseActionSupport {
             if ("1".equals(oper)) {    
                 showMessage = "编辑"+tableDesc;  
                 result = dao.update(productBean); 
-            } else { 
-                result = dao.insert(productBean); 
+            } else {
+            	Long saveid = dao.save(productBean); 
+            	Long time = new Date().getTime();
+            	result =dao.updateProdkey(saveid,MD5.get32MD5(String.valueOf(time)),time/1000);
+     
             }
             if (result) {  
                 showMessage += "成功";  
@@ -65,6 +70,7 @@ public class ProductAction extends BaseActionSupport {
         showMessage = "编辑2"+tableDesc;
         String[] param={
             "id","name","prodKey","model","desp","img"
+            ,"forceBind","ctime"
         };
         boolean result=dao.update(productBean,param);
         if (result) { 

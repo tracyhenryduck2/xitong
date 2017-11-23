@@ -64,6 +64,8 @@ String path = request.getContextPath();
 			     this.innerDoc.getElementById("model").value = $("#model").val();
 			     this.innerDoc.getElementById("desp").value = $("#desp").val();
 			     this.innerDoc.getElementById("img").value = $("#img").val();
+			     this.innerDoc.getElementById("force_bind").value = $("#force_bind").val();
+			     this.innerDoc.getElementById("ctime").value = $("#ctime").val();
            }
 			});    
 		}      
@@ -88,6 +90,8 @@ String path = request.getContextPath();
 			<input type="hidden" name="productBean.model" id="model" value="${productBean.model}"/> 
 			<input type="hidden" name="productBean.desp" id="desp" value="${productBean.desp}"/> 
 			<input type="hidden" name="productBean.img" id="img" value="${productBean.img}"/> 
+			<input type="hidden" name="productBean.forceBind" id="forceBind" value="${productBean.forceBind}"/> 
+			<input type="hidden" name="productBean.ctime" id="ctime" value="${productBean.ctime}"/> 
 		   	<input type="hidden" name="sortname" value="${page.sortname}"/>    
 		   	<input type="hidden" name="sortorder"  value="${page.sortorder }"/>
 		   	<input type="hidden" name="pageSize" value="${page.pageSize}"/>    
@@ -95,12 +99,14 @@ String path = request.getContextPath();
 			<table id="table1" width="100%" height="100%"  border="0" cellspacing="0" cellpadding="0"> 
 			   	 <thead>
 			   		<tr>  
-			   			<th><span><input type="checkbox" onClick="checkAll(this,'idArr')"  width="20"/></span></th>     
+			   			<th width="2%"><span><input type="checkbox" onClick="checkAll(this,'idArr')"  width="20"/></span></th>     
 			   			<th sortname="name" width="10%">设备型号名称</th>	   
 			   			<th sortname="prod_key" width="10%">设备种类标识</th>	   
 			   			<th sortname="model" width="10%">设备型号</th>	   
 			   			<th sortname="desp" width="10%">介绍</th>	   
 			   			<th sortname="img" width="10%">产品图片</th>	   
+			   			<th sortname="force_bind" width="10%">是否强制绑定</th>	   
+			   			<th sortname="ctime" width="10%">生成时间</th>	   
 			   		</tr> 
 			   	</thead>
 			   	<tbody> 
@@ -112,6 +118,8 @@ String path = request.getContextPath();
 		   			 	 <td>${map.model}</td>    
 		   			 	 <td>${map.desp}</td>    
 		   			 	 <td>${map.img}</td>    
+		   			 	 <td>${map.force_bind}</td>    
+		   			 	 <td><GF:ConvertTime format="yyyy-MM-dd HH:mm:ss" value="${map.ctime}"/></td>    
 		   			 </tr>
 		   			 </s:iterator> 	    
 		   		</tbody>		    		  

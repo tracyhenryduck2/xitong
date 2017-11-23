@@ -129,7 +129,7 @@ public class TJavaJspList implements TBase {
 		str +="			<table id=\"table1\" width=\"100%\" height=\"100%\"  border=\"0\" cellspacing=\"0\" cellpadding=\"0\"> \r\n";
 		str +="			   	 <thead>\r\n";
 		str +="			   		<tr>  \r\n";
-		str +="			   			<th><span><input type=\"checkbox\" onClick=\"checkAll(this,'idArr')\"  width=\"20\"/></span></th>     \r\n";
+		str +="			   			<th width=\"2%\"><span><input type=\"checkbox\" onClick=\"checkAll(this,'idArr')\"  width=\"20\"/></span></th>     \r\n";
 		
 		str += colStr;
 

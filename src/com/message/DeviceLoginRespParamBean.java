@@ -1,6 +1,6 @@
 package com.message;
 
-public class DeviceLoginRespParamBean extends ParamBean{
+public class DeviceLoginRespParamBean {
 	   private String devTid;
 	   private String prodKey;
 	   private String token;

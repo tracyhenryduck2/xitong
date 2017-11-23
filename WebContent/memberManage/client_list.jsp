@@ -113,7 +113,7 @@ String path = request.getContextPath();
 			<table id="table1" width="100%" height="100%"  border="0" cellspacing="0" cellpadding="0"> 
 			   	 <thead>
 			   		<tr>  
-			   			<th><span><input type="checkbox" onClick="checkAll(this,'idArr')"  width="20"/></span></th>     
+			   			<th width="2%"><span><input type="checkbox" onClick="checkAll(this,'idArr')"  width="20"/></span></th>     
 			   			<th sortname="username" width="5%">登陆名</th>	   
 			   			<th sortname="password" width="10%">密码</th>	   
 			   			<th sortname="email" width="10%">邮箱</th>	   

@@ -14,6 +14,8 @@ String path = request.getContextPath();
 			Dialog.opener().document.getElementById("model").value = $("#model").val()||"";    
 			Dialog.opener().document.getElementById("desp").value = $("#desp").val()||"";    
 			Dialog.opener().document.getElementById("img").value = $("#img").val()||"";    
+			Dialog.opener().document.getElementById("forceBind").value = $("#forceBind").val()||"";    
+			Dialog.opener().document.getElementById("ctime").value = $("#ctime").val()||"";    
 			Dialog.opener().document.form1.submit();                     
 			ownerDialog.close();
 	}                                       
@@ -37,6 +39,12 @@ String path = request.getContextPath();
 			    },                              
 			    "productBean.img":{            
 			        CNRangeLength:[0,255]
+			    },                              
+			    "productBean.forceBind":{            
+			        number:true,range:[0,9999999999]
+			    },                              
+			    "productBean.ctime":{            
+			        number:true,range:[0,9999999999]
 			    }                              
 			},                                  
 			messages:{                          
@@ -90,6 +98,22 @@ String path = request.getContextPath();
         </td>                            
         <td>                             
             <input type="text" name="productBean.img" id="img"  value="${productBean.img}" class="GF-field"/>   
+        </td>                            
+  </tr>                                
+  <tr>                                    
+    	<td align="right" width="30%" > 
+                            是否强制绑定<span class="mark"></span>   
+        </td>                            
+        <td>                             
+            <input type="text" name="productBean.forceBind" id="forceBind"  value="${productBean.forceBind}" class="GF-field"/>   
+        </td>                            
+  </tr>                                
+  <tr>                                    
+    	<td align="right" width="30%" > 
+                            生成时间<span class="mark"></span>   
+        </td>                            
+        <td>                             
+            <input type="text" name="productBean.ctime" id="ctime"  value="${productBean.ctime}" class="GF-field"/>   
         </td>                            
   </tr>                                
   <tr>                                

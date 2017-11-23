@@ -1,6 +1,6 @@
 package com.message;
 
-public class DeviceReportInfoParamBean extends ParamBean {
+public class DeviceReportInfoParamBean {
         private String devTid;
         
         private String mac;

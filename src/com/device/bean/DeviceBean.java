@@ -88,6 +88,12 @@ public class DeviceBean {
 	*/
 	@Column(name="ssid")
 	private String ssid;
+
+	/**
+	 * 注册时间 
+	*/
+	@Column(name="ctime")
+	private Long ctime;
     	
     /** 
      * 
@@ -296,4 +302,21 @@ public class DeviceBean {
     public void setSsid(String ssid) {
     	this.ssid = ssid;
     }
+    	
+    /** 
+     * 注册时间
+     * @return 
+     */ 
+    public Long getCtime() {
+    	return ctime;
+    }
+    
+    /** 
+     * 注册时间
+     * @param 
+     */ 
+    public void setCtime(Long ctime) {
+    	this.ctime = ctime;
+    }
+    	
 }

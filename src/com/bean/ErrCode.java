@@ -23,7 +23,7 @@ public enum ErrCode {
       SERVER_INERNAL_ERROR(8500000,"Internal error"),
       LINK_ERROR(8500001,"Link error"),
       
-	
+	  SUCCESS(200,"Success"),
 	  SUCCESS_CLIENT(9200000,"Success"),
 	  UNKNOWN_ERROR(9400000,"Error"),
 	  APP_REPEAT_LOGIN_ERROR(9400002,"App repeat login error"),
@@ -40,7 +40,8 @@ public enum ErrCode {
 	  REFRESH_TOKEN_NOT_EXIST_ERROR(9400020,"refresh token not exist"),
 	  REFRESH_TOKEN_TIME_OUT_ERROR(1,"refresh token time out"),
 	  JWT_TIME_OUT_ERROR(403,"JWT time out"),
-	  JWT_NOT_EXIST_ERROR(9400021,"JWT is not exist");
+	  JWT_NOT_EXIST_ERROR(9400021,"JWT is not exist"),
+	  JSON_PARSE_ERROR(9400022," Unable to parse Json,or Json is not in protocol");
 	  
 	  
 	

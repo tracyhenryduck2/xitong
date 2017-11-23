@@ -11,7 +11,8 @@ public enum ActionType {
 	 DEVICE_LOGIN("deviceLogin"),
 	 DEVICE_LOGINRESP("deviceLoginResp"),
      APP_SEND("appSend"),
-     APP_SENDRESP("appSendRep");
+     APP_SENDRESP("appSendRep"),
+     APP_LOGIN("appLogin");
 	
     // 成员变量  
     private String name;  

@@ -15,7 +15,7 @@ public class SthomeSocketPool {
 	private static final Map<String,SthomeSocketThread > connections = new HashMap<String,SthomeSocketThread>();
 	
 	
-	//获取所有的在线设备token
+	//获取所有的设备token
 	public static Set<String> getOnlineDevice(){
 		return connections.keySet();
 	}

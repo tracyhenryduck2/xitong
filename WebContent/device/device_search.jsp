@@ -21,6 +21,7 @@ String path = request.getContextPath();
 			Dialog.opener().document.getElementById("pid").value = $("#pid").val()||"";    
 			Dialog.opener().document.getElementById("name").value = $("#name").val()||"";    
 			Dialog.opener().document.getElementById("ssid").value = $("#ssid").val()||"";    
+			Dialog.opener().document.getElementById("ctime").value = $("#ctime").val()||"";    
 			Dialog.opener().document.form1.submit();                     
 			ownerDialog.close();
 	}                                       
@@ -65,6 +66,9 @@ String path = request.getContextPath();
 			    },                              
 			    "deviceBean.ssid":{            
 			        CNRangeLength:[0,255]
+			    },                              
+			    "deviceBean.ctime":{            
+			        number:true,range:[0,9999999999]
 			    }                              
 			},                                  
 			messages:{                          
@@ -163,6 +167,16 @@ String path = request.getContextPath();
         <td>                             
             <input type="text" name="deviceBean.ssid" id="ssid"  value="${deviceBean.ssid}" class="GF-field"/>   
         </td>                            
+  </tr>                                
+  <tr>                                    
+    	<td align="right" width="20%" > 
+                            注册时间<span class="mark"></span>   
+        </td>                            
+        <td>                             
+            <input type="text" name="deviceBean.ctime" id="ctime"  value="${deviceBean.ctime}" class="GF-field"/>   
+        </td>                            
+    	<td align="right" width="20%">&nbsp;</td> 
+    	<td></td>                        
   </tr>                                
   <tr>                                
       <td>&nbsp;</td>		

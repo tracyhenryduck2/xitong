@@ -49,6 +49,14 @@ public class ProductDAO extends BaseDAO {
     			objectList.add(productBean.getImg());
     			sqlWhere += " AND a.img = ? ";
     		} 
+    		if(productBean.getForceBind() != null) { 
+    			objectList.add(productBean.getForceBind());
+    			sqlWhere += " AND a.force_bind = ? ";
+    		} 
+    		if(productBean.getCtime() != null) { 
+    			objectList.add(productBean.getCtime());
+    			sqlWhere += " AND a.ctime = ? ";
+    		} 
     	}                 
     	sql = sql + sqlWhere; 
     	Object[] pram = objectList.toArray(); 
@@ -58,12 +66,21 @@ public class ProductDAO extends BaseDAO {
     	page.setTotalRows(j.queryForInteger("select count(*) from product a "+sqlWhere, pram));
     	List<Map<String,Object>> list=j.queryForPageList(sql, page.getPageNo(),page.getPageSize(),pram);  
     	return list;      
-    }
+    } 
     
-    public List<Map<String,Object>> getList(){
-    	String sql = "select id,name from product";
-    	return j.queryForList(sql);
-    	
-    }
     
+   public List<Map<String,Object>> getList(){
+	   String sql = "select id,name from product";
+	   return j.queryForList(sql);
+	   
+   }
+   
+   public boolean updateProdkey(Long id,String prodkey,Long ctime){
+	    
+	   String sql = "update product set ctime=?,prod_key=? where id=?";
+	   Object[] params = {ctime,prodkey,id};
+	   
+	   return j.execute(sql, params);
+	   
+   }
 }                       

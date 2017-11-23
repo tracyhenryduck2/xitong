@@ -7,6 +7,8 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.Socket;
 
+import com.websocket.WebSocketAppMessageInboundPool;
+
 
 public class SthomeSocketThread implements Runnable {
     
@@ -32,6 +34,7 @@ public class SthomeSocketThread implements Runnable {
             String msg = null;
             while ((msg = br.readLine()) != null) {
                 System.out.println("接收到:" + msg);
+                 
             }
         } catch (IOException e) {
             e.printStackTrace();

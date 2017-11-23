@@ -1,6 +1,6 @@
 package com.message;
 
-public class AppSendRespParamBean extends ParamBean {
+public class AppSendRespParamBean {
 	   private String data;
 	   
 	   private String devTid;

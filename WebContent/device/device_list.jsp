@@ -71,6 +71,7 @@ String path = request.getContextPath();
 			     this.innerDoc.getElementById("pid").value = $("#pid").val();
 			     this.innerDoc.getElementById("name").value = $("#name").val();
 			     this.innerDoc.getElementById("ssid").value = $("#ssid").val();
+			     this.innerDoc.getElementById("ctime").value = $("#ctime").val();
            }
 			});    
 		}      
@@ -102,6 +103,7 @@ String path = request.getContextPath();
 			<input type="hidden" name="deviceBean.pid" id="pid" value="${deviceBean.pid}"/> 
 			<input type="hidden" name="deviceBean.name" id="name" value="${deviceBean.name}"/> 
 			<input type="hidden" name="deviceBean.ssid" id="ssid" value="${deviceBean.ssid}"/> 
+			<input type="hidden" name="deviceBean.ctime" id="ctime" value="${deviceBean.ctime}"/> 
 		   	<input type="hidden" name="sortname" value="${page.sortname}"/>    
 		   	<input type="hidden" name="sortorder"  value="${page.sortorder }"/>
 		   	<input type="hidden" name="pageSize" value="${page.pageSize}"/>    
@@ -109,7 +111,7 @@ String path = request.getContextPath();
 			<table id="table1" width="100%" height="100%"  border="0" cellspacing="0" cellpadding="0"> 
 			   	 <thead>
 			   		<tr>  
-			   			<th><span><input type="checkbox" onClick="checkAll(this,'idArr')"  width="20"/></span></th>     
+			   			<th width="2%"><span><input type="checkbox" onClick="checkAll(this,'idArr')"  width="20"/></span></th>     
 			   			<th sortname="dev_tid" width="10%">设备id</th>	   
 			   			<th sortname="token" width="10%">设备token</th>	   
 			   			<th sortname="ctrl_key" width="10%">控制码</th>	   
@@ -122,6 +124,7 @@ String path = request.getContextPath();
 			   			<th sortname="pid" width="10%">设备种类id</th>	   
 			   			<th sortname="name" width="10%">设备名称</th>	   
 			   			<th sortname="ssid" width="10%">wifi名称</th>	   
+			   			<th sortname="ctime" width="10%">注册时间</th>	   
 			   		</tr> 
 			   	</thead>
 			   	<tbody> 
@@ -140,6 +143,7 @@ String path = request.getContextPath();
 		   			 	 <td>${map.pid}</td>    
 		   			 	 <td>${map.name}</td>    
 		   			 	 <td>${map.ssid}</td>    
+		   			 	 <td>${map.ctime}</td>    
 		   			 </tr>
 		   			 </s:iterator> 	    
 		   		</tbody>		    		  

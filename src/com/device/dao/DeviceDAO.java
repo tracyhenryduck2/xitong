@@ -77,6 +77,10 @@ public class DeviceDAO extends BaseDAO {
     			objectList.add(deviceBean.getSsid());
     			sqlWhere += " AND a.ssid = ? ";
     		} 
+    		if(deviceBean.getCtime() != null) { 
+    			objectList.add(deviceBean.getCtime());
+    			sqlWhere += " AND a.ctime = ? ";
+    		} 
     	}                 
     	sql = sql + sqlWhere; 
     	Object[] pram = objectList.toArray(); 
