@@ -107,6 +107,13 @@ public class SiterAppDao extends BaseDAO{
 		
 	}
 
+	/**
+	 * 增加用户登录记录
+	 * @param token
+	 * @param ip
+	 * @param time
+	 * @return
+	 */
 	public boolean addLogin(String token,String ip,Long time){
 		
 		
@@ -116,5 +123,35 @@ public class SiterAppDao extends BaseDAO{
 		return j.execute(sql, params);
 	}
 	
+	/**
+	 * 增加设备登录登出记录
+	 * @param did
+	 * @param type
+	 * @param time
+	 * @return
+	 */
+	public boolean addDevicelogin(Long did,Long type,Long time){
+		
+		String sql  = "insert device_login_log (did,action_type,atime) values (?,?,?)";
+		
+		Object[] params = {did,type,time};		
+		
+		return j.execute(sql, params);
+	}
 	
+	public Long getDidFromToken(String token){
+		String sql = "select id from device where token = ?";
+		Object[] params = {token};
+		
+		return j.queryForLong(sql, params);
+		
+	}
+	
+	public Long getpidFromKey(String key){
+		String sql = "select id from product where prod_key = ?";
+		Object[] params = {key};
+		
+		return j.queryForLong(sql, params);
+		
+	}
 }

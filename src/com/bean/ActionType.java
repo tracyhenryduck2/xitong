@@ -4,12 +4,12 @@ public enum ActionType {
 	
 	 HEARTBEAT("heartbeat"),
 	 HEARTBEATRESP("heartbeatResp"),
-	 DEVICE_SEND("deviceSend"),
-	 DEVICE_SENDRESP("deviceSendResp"),
+	 DEVICE_SEND("devSend"),
+	 DEVICE_SENDRESP("devSendResp"),
 	 DEVICE_REPORTINFO("reportDevInfo"),
 	 DEVICE_REPORTINFORESP("reportDevInfoResp"),
-	 DEVICE_LOGIN("deviceLogin"),
-	 DEVICE_LOGINRESP("deviceLoginResp"),
+	 DEVICE_LOGIN("devLogin"),
+	 DEVICE_LOGINRESP("devLoginResp"),
      APP_SEND("appSend"),
      APP_SENDRESP("appSendRep"),
      APP_LOGIN("appLogin");

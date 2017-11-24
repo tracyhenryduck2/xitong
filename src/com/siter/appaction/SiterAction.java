@@ -58,6 +58,15 @@ public class SiterAction extends BaseActionSupport{
 
 	}
 	
+	/**
+	 * 用于测试
+	 */
+	public void test(){
+		Map<String,Object> loginInfo=new HashMap<String,Object>();
+	   Long ds =	siterAppdao.getDidFromToken("dsada");
+		loginInfo.put("code", ds);
+		outPrintJSONObject(loginInfo);
+	}
 	
 	/**
 	 * 移动端客户登录

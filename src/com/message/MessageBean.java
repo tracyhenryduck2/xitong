@@ -8,17 +8,18 @@ public class MessageBean implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-   private	int msgid;   
+   private	int msgId;   
    private String action;
    private int  code;
    private String desc;
    
    
-	public int getMsgid() {
-		return msgid;
-	}
-	public void setMsgid(int msgid) {
-		this.msgid = msgid;
+  
+	public int getMsgId() {
+	return msgId;
+}
+	public void setMsgId(int msgId) {
+		this.msgId = msgId;
 	}
 	public String getAction() {
 		return action;

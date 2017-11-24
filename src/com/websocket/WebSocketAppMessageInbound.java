@@ -118,7 +118,7 @@ public class WebSocketAppMessageInbound extends MessageInbound {
 				     siterAppdao.addLogin(token, ip, new Date().getTime()/1000l);
 					 setAccess_token(token);
 					 JSONObject ds = new JSONObject();
-					 ds.put("msgId", workflow.getMsgid());
+					 ds.put("msgId", workflow.getMsgId());
 					 ds.put("action", "appLoginResp");
 					 ds.put("code", ErrCode.SUCCESS.getCode());
 					 ds.put("desc", ErrCode.SUCCESS.getName());
@@ -135,7 +135,7 @@ public class WebSocketAppMessageInbound extends MessageInbound {
         	
         }else if(ActionType.HEARTBEAT.getName().equals(workflow.getAction())){
 			 JSONObject ds = new JSONObject();
-			 ds.put("msgId", workflow.getMsgid());
+			 ds.put("msgId", workflow.getMsgId());
 			 ds.put("action", ActionType.HEARTBEATRESP.getName());
 			 ds.put("code", ErrCode.SUCCESS.getCode());
 			 ds.put("desc", ErrCode.SUCCESS.getName());
