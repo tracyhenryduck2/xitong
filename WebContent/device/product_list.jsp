@@ -69,7 +69,14 @@ String path = request.getContextPath();
            }
 			});    
 		}      
-		
+		function seeparams(){
+			var id = getCheckRowValue();     
+			if(id==null) {     
+				return;   
+			}    
+			   Dialog.open({Title:"产品参数",Width:1000,Height:600,URL:"<%=path%>/device/ClientParam!list.action?clientParamBean.pid="+id});
+			 
+			}
 	</script>
   </head> 
   <body>  
@@ -81,7 +88,8 @@ String path = request.getContextPath();
 	  	<GF:ToolBarItem id="delete" label="删除" ico="images/ico/delete.gif" onclick="del();"/> 
 	  	<GF:ToolBarItem id="detail" label="详情" ico="images/ico/detail.gif" onclick="detail();"/>     
 	  	<GF:ToolBarItem id="export" label="导出" ico="images/ico/export.gif" onclick="exportExcel();"/>
-	  	<GF:ToolBarItem id="refresh" label="刷新" ico="images/ico/refresh.gif" onclick="refresh();"/>  
+	  	<GF:ToolBarItem id="refresh" label="刷新" ico="images/ico/refresh.gif" onclick="refresh();"/>
+	    <GF:ToolBarItem id="param" label="参数" ico="images/ico/abc.gif" onclick="seeparams();"/>   
 	</GF:ToolBar>   
     <form action="<%=path%>/device/Product!list.action" name="form1" id="form1" method="get">  
    

@@ -1,6 +1,9 @@
 package com.siter.appaction;
 
+import java.util.Map;
+
 import com.common.BaseDAO;
+import com.device.bean.DeviceBean;
 import com.memberManage.bean.ClientBean;
 import com.memberManage.bean.ClientTokenBean;
 
@@ -154,4 +157,52 @@ public class SiterAppDao extends BaseDAO{
 		return j.queryForLong(sql, params);
 		
 	}
+	
+	
+	public Map<String,Object> getDeviceidByBindKey(String bindKey,String devTid){
+		String sql = "select a.*,b.force_bind from device a left join product b on a.pid = b.id where bind_key=? and dev_tid=?";
+		Object[] params = {bindKey,devTid};
+		
+		return j.queryForMap(sql, params);
+	}
+	
+	public Map<String,Object> isExistDT(Long did,Long cid){
+		
+		String sql = "select * from device_rel where did=? and cid!=? and status=1";
+		Object[] params = {did,cid};
+		
+		return j.queryForMap(sql, params);
+		
+	}
+	
+	public Map<String,Object> isExistDT2(Long did,Long cid){
+		
+		String sql = "select * from device_rel where did=? and cid=? and status=1";
+		Object[] params = {did,cid};
+		
+		return j.queryForMap(sql, params);
+		
+	}
+	
+	public boolean UnbindDeivceOther(Long did,Long utime){
+		
+		String sql = "update deivce_rel set utime=? and status=2 where did=?";
+		Object[] params = {utime,did};
+		return j.execute(sql, params);
+	}
+	
+	public boolean bindDeivce(Long did,Long cid,Long ctime){
+		
+		String sql = "insert deivce_rel (did,cid,ctime,status) values(?,?,?,1)";
+		Object[] params = {did,cid,ctime};
+		return j.execute(sql, params);
+	}
+	
+	public boolean ubindDevice(Long did,Long cid,Long utime){
+		
+		String sql = "update deivce_rel set utime=? and status=2 where did=? and cid=?";
+		Object[] params = {utime,did,cid};
+		return j.execute(sql, params);
+	}
+	
 }

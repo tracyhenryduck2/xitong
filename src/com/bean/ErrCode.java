@@ -14,12 +14,14 @@ public enum ErrCode {
 	  CLIENT_NOT_EXIST_ERROR(8400010,"User does not exist"),
 	  DEVICE_NOT_BELONG_TO_USER_ERROR(8400012,"Device does not belong to user"),
 	  DEVICE_REPEAT_LOGIN_ERROR(8400013,"Device repeat login"),
+	  DEVICE_REPEAT_BIND_ERROR(8400014,"Device repeat bind"),
 	  DEVICE_TOKEN_ERROR(8400017,"Device token can not verification"),
 	  DEVICE_NOT_ONLINE(8400018,"Device is not online"),
 	  PRODUCT_KEY_NOT_AVAILABLE_ERROR(8400027,"Product key not available"),
 	  PIN_SSID_NOT_AVAILABLE_ERROR(8400028,"PinCode or SSID not available"),
 	  BIND_FAiL_TIME_OUT_ERROR(8400029,"Bind failed due to timeout error"),
       CAN_NOT_FORCE_BIND_ERROR(8400031,"Can not force bind device"),
+      DEVICE_NOT_EXIST_ERROR(8400032,"Device is not exist error"),
       SERVER_INERNAL_ERROR(8500000,"Internal error"),
       LINK_ERROR(8500001,"Link error"),
       
@@ -41,7 +43,8 @@ public enum ErrCode {
 	  REFRESH_TOKEN_TIME_OUT_ERROR(1,"refresh token time out"),
 	  JWT_TIME_OUT_ERROR(403,"JWT time out"),
 	  JWT_NOT_EXIST_ERROR(9400021,"JWT is not exist"),
-	  JSON_PARSE_ERROR(9400022," Unable to parse Json,or Json is not in protocol");
+	  JSON_PARSE_ERROR(9400022," Unable to parse Json,or Json is not in protocol"),
+	  NUMBER_OUT_OF_RANGE(9400023, " Number out of range");
 	  
 	  
 	

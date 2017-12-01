@@ -19,6 +19,11 @@
 			 		<result name="list">/device/device_list.jsp</result>
 			 		<result name="search">/device/device_search.jsp</result>
            </action>
+           <action name="ClientParam" class="com.device.action.ClientParamAction">
+	 		<result name="toAddClientParam">/device/clientParam_edit.jsp</result>
+	 		<result name="list">/device/clientParam_list.jsp</result>
+           </action>
+           
 	</package>
 		
 </struts>
