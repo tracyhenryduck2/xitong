@@ -114,7 +114,8 @@ String path = request.getContextPath();
 			   			<th sortname="desp" width="10%">介绍</th>	   
 			   			<th sortname="img" width="10%">产品图片</th>	   
 			   			<th sortname="force_bind" width="10%">是否强制绑定</th>	   
-			   			<th sortname="ctime" width="10%">生成时间</th>	   
+			   			<th sortname="ctime" width="10%">生成时间</th>
+			   			<th sortname="is_gateway" width="10%">是否是网关</th>	   
 			   		</tr> 
 			   	</thead>
 			   	<tbody> 
@@ -128,6 +129,7 @@ String path = request.getContextPath();
 		   			 	 <td>${map.img}</td>    
 		   			 	 <td>${map.force_bind}</td>    
 		   			 	 <td><GF:ConvertTime format="yyyy-MM-dd HH:mm:ss" value="${map.ctime}"/></td>    
+		   			     <td>${map.is_gateway}</td>
 		   			 </tr>
 		   			 </s:iterator> 	    
 		   		</tbody>		    		  

@@ -40,7 +40,7 @@
 		 $("input[type='button']").last().after("<input type=\"button\" name=\"打印\" value=\"打印\" onclick=\"window.print();\" class=\"GF-btn noprint\" style=\"margin-left:10px;\"/>");
 		 $(":disabled").css({'color':'gray','border-color':'#CCC'});
 	 }else{
-		 $(".hidew").hide();
+		 $(".ctime-hide").hide();
 	 }
  });
 </script>

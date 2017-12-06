@@ -56,6 +56,10 @@ public class ProductDAO extends BaseDAO {
     		if(productBean.getCtime() != null) { 
     			objectList.add(productBean.getCtime());
     			sqlWhere += " AND a.ctime = ? ";
+    		}
+    		if(productBean.getIsGateway() != null) { 
+    			objectList.add(productBean.getCtime());
+    			sqlWhere += " AND a.is_gateway = ? ";
     		} 
     	}                 
     	sql = sql + sqlWhere; 

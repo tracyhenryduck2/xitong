@@ -15,7 +15,8 @@ String path = request.getContextPath();
 			Dialog.opener().document.getElementById("desp").value = $("#desp").val()||"";    
 			Dialog.opener().document.getElementById("img").value = $("#img").val()||"";    
 			Dialog.opener().document.getElementById("forceBind").value = $("#forceBind").val()||"";    
-			Dialog.opener().document.getElementById("ctime").value = $("#ctime").val()||"";    
+			Dialog.opener().document.getElementById("ctime").value = $("#ctime").val()||"";
+			Dialog.opener().document.getElementById("isGateway").value = $("#isGateway").val()||""; 
 			Dialog.opener().document.form1.submit();                     
 			ownerDialog.close();
 	}                                       
@@ -45,7 +46,10 @@ String path = request.getContextPath();
 			    },                              
 			    "productBean.ctime":{            
 			        number:true,range:[0,9999999999]
-			    }                              
+			    },
+			    "productBean.isGateway":{            
+			        number:true,range:[0,1]
+			    },
 			},                                  
 			messages:{                          
 //			    "productBean.code":{          
@@ -114,6 +118,14 @@ String path = request.getContextPath();
         </td>                            
         <td>                             
             <input type="text" name="productBean.ctime" id="ctime"  value="${productBean.ctime}" class="GF-field"/>   
+        </td>                            
+  </tr>
+    <tr>                                    
+    	<td align="right" width="30%" > 
+                            是否是网关<span class="mark"></span>   
+        </td>                            
+        <td>                             
+            <input type="text" name="productBean.isGateway" id="isGateway"  value="${productBean.isGateway}" class="GF-field"/>   
         </td>                            
   </tr>                                
   <tr>                                

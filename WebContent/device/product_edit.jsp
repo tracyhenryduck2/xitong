@@ -52,7 +52,10 @@ String path = request.getContextPath();
 			    },                              
 			    "productBean.forceBind":{            
 			        required : true,number:true,range:[0,9999999999]
-			    }                              
+			    }, 
+			    "productBean.isGateway":{            
+			        required : true,number:true,range:[0,1]
+			    }
 			},                                  
 			messages:{                          
 //			    "productBean.code":{          
@@ -78,7 +81,7 @@ String path = request.getContextPath();
             <input type="text" name="productBean.name" id="name"  value="${productBean.name}" class="GF-field"/>   
         </td>                            
   </tr>                                
-  <tr class="hidew">                                    
+  <tr class="ctime-hide">                                    
     	<td align="right" > 
                             设备种类标识<span class="mark"></span>   
         </td>                            
@@ -118,12 +121,20 @@ String path = request.getContextPath();
             <input type="text" name="productBean.forceBind" id="forceBind"  value="${productBean.forceBind}" class="GF-field"/>   
         </td>                            
   </tr>                                
-  <tr class="hidew">                                    
+  <tr class="ctime-hide">                                    
     	<td align="right" > 
                             生成时间<span class="mark"></span>   
         </td>                            
         <td>                             
             <GF:ConvertTime format="yyyy-MM-dd HH:mm:ss" value="${productBean.ctime}"/>   
+        </td>                            
+  </tr>
+  <tr>                                    
+    	<td align="right" > 
+                            是否是网关<span class="mark">*</span>   
+        </td>                            
+        <td>                             
+            <input type="text" name="productBean.isGateway" id="isGateway"  value="${productBean.isGateway}" class="GF-field"/>   
         </td>                            
   </tr>                                
   <tr>                                

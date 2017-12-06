@@ -58,7 +58,14 @@ public class ProductBean {
 	*/
 	@Column(name="ctime")
 	private Long ctime;
+    
+	/**
+	 * 是否是网关 
+	*/
+	@Column(name="is_gateway")
+	private Long isGateway;
     	
+	
     /** 
      * 
      * @return 
@@ -186,5 +193,15 @@ public class ProductBean {
     public void setCtime(Long ctime) {
     	this.ctime = ctime;
     }
+
+	public Long getIsGateway() {
+		return isGateway;
+	}
+
+	public void setIsGateway(Long isGateway) {
+		this.isGateway = isGateway;
+	}
+    
+    
     	
 }
