@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.multipart.maxSize" value="1073741824"/>
+   <!-- <constant name="struts.enable.DynamicMethodInvocation" value="false" /> -->
+   <!--  <constant name="struts.devMode" value="false" /> -->
+   <package name="device" extends="login.interceptor"
+		namespace="/device">
+	        <action name="Product" class="com.device.action.ProductAction">
+		 		<result name="toAddProduct">/device/product_edit.jsp</result>
+		 		<result name="list">/device/product_list.jsp</result>
+		 		<result name="search">/device/product_search.jsp</result>
+            </action>
+            <action name="Device" class="com.device.action.DeviceAction">
+			 		<result name="toAddDevice">/device/device_edit.jsp</result>
+			 		<result name="list">/device/device_list.jsp</result>
+			 		<result name="search">/device/device_search.jsp</result>
+           </action>
+           <action name="ClientParam" class="com.device.action.ClientParamAction">
+	 		<result name="toAddClientParam">/device/clientParam_edit.jsp</result>
+	 		<result name="list">/device/clientParam_list.jsp</result>
+           </action>
+           <action name="AppUpdate" class="com.device.action.AppUpdateAction">
+               <result name="toAddAppUpdate">/device/appUpdate_edit.jsp</result>
+               <result name="list">/device/appUpdate_list.jsp</result>
+               <result name="search">/device/appUpdate_search.jsp</result>
+           </action>
+	</package>
+		
+</struts>

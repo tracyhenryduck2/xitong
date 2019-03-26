@@ -21,7 +21,6 @@ import com.common.Transaction;
 import com.device.bean.DeviceBean;
 import com.memberManage.bean.ClientBean;
 import com.memberManage.bean.ClientTokenBean;
-import com.memberManage.bean.MemberBean;
 import com.memberManage.dao.ClientTokenDAO;
 import com.sun.security.ntlm.Client;
 import com.avatar.gdk.util.StringUtils;
