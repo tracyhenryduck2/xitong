@@ -11,5 +11,5 @@
 	<include file="/config/system-struts.xml"></include>
 	<include file="/config/member-struts.xml"></include>
 	<include file="/config/siter-app-struts.xml"></include>
-	<include file="/config/install-struts.xml"></include>
+	<include file="/config/device-struts.xml"></include>
 </struts>
