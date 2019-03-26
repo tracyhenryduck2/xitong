@@ -23,7 +23,11 @@
 	 		<result name="toAddClientParam">/device/clientParam_edit.jsp</result>
 	 		<result name="list">/device/clientParam_list.jsp</result>
            </action>
-           
+           <action name="AppUpdate" class="com.device.action.AppUpdateAction">
+               <result name="toAddAppUpdate">/device/appUpdate_edit.jsp</result>
+               <result name="list">/device/appUpdate_list.jsp</result>
+               <result name="search">/device/appUpdate_search.jsp</result>
+           </action>
 	</package>
 		
 </struts>

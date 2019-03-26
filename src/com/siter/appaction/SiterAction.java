@@ -36,6 +36,11 @@ public class SiterAction extends BaseActionSupport{
     private SiterAppDao siterAppdao = new SiterAppDao();
     private ClientTokenDAO clienttokendao = new ClientTokenDAO();
 	
+    
+    public void getAppUpdate() {
+		Map<String,Object> loginInfo=siterAppdao.getAppUpdate();
+		outPrintJSONObject(loginInfo);
+    }
 	
 	/**
 	 * 发送邮箱给客户

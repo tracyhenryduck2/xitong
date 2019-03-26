@@ -205,4 +205,12 @@ public class SiterAppDao extends BaseDAO{
 		return j.execute(sql, params);
 	}
 	
+	
+	public Map<String,Object> getAppUpdate(){
+		
+		String sql = "select * from app_update limit 1";
+		
+		return j.queryForMap(sql);
+		
+	}
 }
