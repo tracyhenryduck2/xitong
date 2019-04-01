@@ -100,6 +100,12 @@ public class AppUpdateBean {
 	*/
 	@Column(name="url_ex")
 	private String urlEx;
+
+	/**
+	 * 是否是ios 
+	*/
+	@Column(name="ios")
+	private Long ios;
     	
     /** 
      * 
@@ -339,5 +345,21 @@ public class AppUpdateBean {
      */ 
     public void setUrlEx(String urlEx) {
     	this.urlEx = urlEx;
+    }
+    	
+    /** 
+     * 是否是ios
+     * @return 
+     */ 
+    public Long getIos() {
+    	return ios;
+    }
+    
+    /** 
+     * 是否是ios
+     * @param 
+     */ 
+    public void setIos(Long ios) {
+    	this.ios = ios;
     }
 }

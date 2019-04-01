@@ -208,7 +208,16 @@ public class SiterAppDao extends BaseDAO{
 	
 	public Map<String,Object> getAppUpdate(){
 		
-		String sql = "select * from app_update limit 1";
+		String sql = "select * from app_update  where ios != 1 limit 1";
+		
+		return j.queryForMap(sql);
+		
+	}
+	
+	
+	public Map<String,Object> getAppUpdateIos(){
+		
+		String sql = "select * from app_update  where ios = 1 limit 1";
 		
 		return j.queryForMap(sql);
 		

@@ -85,6 +85,10 @@ public class AppUpdateDAO extends BaseDAO {
     			objectList.add(appupdateBean.getUrlEx());
     			sqlWhere += " AND a.url_ex = ? ";
     		} 
+    		if(appupdateBean.getIos() != null) { 
+    			objectList.add(appupdateBean.getIos());
+    			sqlWhere += " AND a.ios = ? ";
+    		} 
     	}                 
     	sql = sql + sqlWhere; 
     	Object[] pram = objectList.toArray(); 

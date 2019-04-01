@@ -76,6 +76,9 @@ String path = request.getContextPath();
 			    },                              
 			    "appUpdateBean.urlEx":{            
 			        CNRangeLength:[0,300]
+			    },                              
+			    "appUpdateBean.ios":{            
+			        number:true,range:[0,9999999999]
 			    }                              
 			},                                  
 			messages:{                          
@@ -118,8 +121,10 @@ String path = request.getContextPath();
     	<td align="right"  > 
                             英文说明<span class="mark"></span>   
         </td>                            
-        <td>                             
-            <input type="text" name="appUpdateBean.en" id="en"  value="${appUpdateBean.en}" class="GF-field"/>   
+        <td>      
+        <textarea style="height:100px" name="appUpdateBean.en" id="en"   class="GF-field">
+        ${appUpdateBean.en}
+</textarea>                        
         </td>                            
   </tr>                                
   <tr>                                    
@@ -127,13 +132,17 @@ String path = request.getContextPath();
                             中文说明<span class="mark"></span>   
         </td>                            
         <td>                             
-            <input type="text" name="appUpdateBean.zh" id="zh"  value="${appUpdateBean.zh}" class="GF-field"/>   
+        <textarea style="height:100px" name="appUpdateBean.zh" id="zh"  class="GF-field">
+${appUpdateBean.zh}
+</textarea> 
         </td>                            
     	<td align="right"  > 
                             法文说明<span class="mark"></span>   
         </td>                            
         <td>                             
-            <input type="text" name="appUpdateBean.fr" id="fr"  value="${appUpdateBean.fr}" class="GF-field"/>   
+                    <textarea style="height:100px" name="appUpdateBean.fr" id="fr"  class="GF-field">
+  ${appUpdateBean.fr}
+</textarea>      
         </td>                            
   </tr>                                
   <tr>                                    
@@ -141,13 +150,17 @@ String path = request.getContextPath();
                             德文说明<span class="mark"></span>   
         </td>                            
         <td>                             
-            <input type="text" name="appUpdateBean.de" id="de"  value="${appUpdateBean.de}" class="GF-field"/>   
+                   <textarea style="height:100px" name="appUpdateBean.de" id="de"  class="GF-field">
+  ${appUpdateBean.de}
+</textarea>     
         </td>                            
     	<td align="right"  > 
                             西班牙文说明<span class="mark"></span>   
         </td>                            
         <td>                             
-            <input type="text" name="appUpdateBean.es" id="es"  value="${appUpdateBean.es}" class="GF-field"/>   
+                   <textarea style="height:100px" name="appUpdateBean.es" id="es"  class="GF-field">
+${appUpdateBean.es}
+</textarea>     
         </td>                            
   </tr>                                
   <tr>                                    
@@ -155,13 +168,17 @@ String path = request.getContextPath();
                             荷兰文说明<span class="mark"></span>   
         </td>                            
         <td>                             
-            <input type="text" name="appUpdateBean.nl" id="nl"  value="${appUpdateBean.nl}" class="GF-field"/>   
+                   <textarea style="height:100px" name="appUpdateBean.nl" id="nl" class="GF-field">
+ ${appUpdateBean.nl}
+</textarea>    
         </td>                            
     	<td align="right"  > 
                             芬兰文说明<span class="mark"></span>   
         </td>                            
         <td>                             
-            <input type="text" name="appUpdateBean.fi" id="fi"  value="${appUpdateBean.fi}" class="GF-field"/>   
+                   <textarea style="height:100px" name="appUpdateBean.fi" id="fi"  class="GF-field">
+                   ${appUpdateBean.fi}
+</textarea>      
         </td>                            
   </tr>                                
   <tr>                                    
@@ -169,13 +186,17 @@ String path = request.getContextPath();
                             斯洛文尼亚语说明<span class="mark"></span>   
         </td>                            
         <td>                             
-            <input type="text" name="appUpdateBean.sl" id="sl"  value="${appUpdateBean.sl}" class="GF-field"/>   
+                   <textarea style="height:100px" name="appUpdateBean.sl" id="sl" class="GF-field">
+${appUpdateBean.sl}
+</textarea>    
         </td>                            
     	<td align="right"  > 
                             意大利语说明<span class="mark"></span>   
         </td>                            
         <td>                             
-            <input type="text" name="appUpdateBean.it" id="it"  value="${appUpdateBean.it}" class="GF-field"/>   
+                   <textarea style="height:100px" name="appUpdateBean.it" id="it"  class="GF-field">
+${appUpdateBean.it}
+</textarea>   
         </td>                            
   </tr>                                
   <tr>                                    
@@ -183,7 +204,9 @@ String path = request.getContextPath();
                             捷克语说明<span class="mark"></span>   
         </td>                            
         <td>                             
-            <input type="text" name="appUpdateBean.cs" id="cs"  value="${appUpdateBean.cs}" class="GF-field"/>   
+                   <textarea style="height:100px" name="appUpdateBean.cs" id="cs" class="GF-field">
+${appUpdateBean.cs}
+</textarea>     
         </td>                            
     	<td align="right"  > 
                             app下载的路径国外<span class="mark"></span>   
@@ -191,6 +214,16 @@ String path = request.getContextPath();
         <td>                             
             <input type="text" name="appUpdateBean.urlEx" id="urlEx"  value="${appUpdateBean.urlEx}" class="GF-field"/>   
         </td>                            
+  </tr>                                
+  <tr>                                    
+    	<td align="right"  > 
+                            是否是ios<span class="mark"></span>   
+        </td>                            
+        <td>                             
+            <input type="text" name="appUpdateBean.ios" id="ios"  value="${appUpdateBean.ios}" class="GF-field"/>   
+        </td>                            
+    	<td align="right" width="20%">&nbsp;</td> 
+    	<td></td>                        
   </tr>                                
   <tr>                                
       <td>&nbsp;</td>		

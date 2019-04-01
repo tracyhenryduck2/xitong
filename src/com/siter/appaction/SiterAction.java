@@ -40,6 +40,11 @@ public class SiterAction extends BaseActionSupport{
 		Map<String,Object> loginInfo=siterAppdao.getAppUpdate();
 		outPrintJSONObject(loginInfo);
     }
+    
+    public void getAppUpdateIos() {
+		Map<String,Object> loginInfo=siterAppdao.getAppUpdateIos();
+		outPrintJSONObject(loginInfo);
+    }
 	
 	/**
 	 * 发送邮箱给客户

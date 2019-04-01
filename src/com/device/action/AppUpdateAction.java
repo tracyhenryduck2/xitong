@@ -66,7 +66,7 @@ public class AppUpdateAction extends BaseActionSupport {
         String[] param={
             "id","version","code","url","en","zh"
             ,"fr","de","es","nl","fi"
-            ,"sl","it","cs","urlEx"
+            ,"sl","it","cs","urlEx","ios"
         };
         boolean result=dao.update(appUpdateBean,param);
         if (result) { 

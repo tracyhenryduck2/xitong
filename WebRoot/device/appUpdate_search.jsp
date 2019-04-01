@@ -23,6 +23,7 @@ String path = request.getContextPath();
 			Dialog.opener().document.getElementById("it").value = $("#it").val()||"";    
 			Dialog.opener().document.getElementById("cs").value = $("#cs").val()||"";    
 			Dialog.opener().document.getElementById("urlEx").value = $("#urlEx").val()||"";    
+			Dialog.opener().document.getElementById("ios").value = $("#ios").val()||"";    
 			Dialog.opener().document.form1.submit();                     
 			ownerDialog.close();
 	}                                       
@@ -73,6 +74,9 @@ String path = request.getContextPath();
 			    },                              
 			    "appUpdateBean.urlEx":{            
 			        CNRangeLength:[0,300]
+			    },                              
+			    "appUpdateBean.ios":{            
+			        number:true,range:[0,9999999999]
 			    }                              
 			},                                  
 			messages:{                          
@@ -185,6 +189,16 @@ String path = request.getContextPath();
         <td>                             
             <input type="text" name="appUpdateBean.urlEx" id="urlEx"  value="${appUpdateBean.urlEx}" class="GF-field"/>   
         </td>                            
+  </tr>                                
+  <tr>                                    
+    	<td align="right" width="20%" > 
+                            是否是ios<span class="mark"></span>   
+        </td>                            
+        <td>                             
+            <input type="text" name="appUpdateBean.ios" id="ios"  value="${appUpdateBean.ios}" class="GF-field"/>   
+        </td>                            
+    	<td align="right" width="20%">&nbsp;</td> 
+    	<td></td>                        
   </tr>                                
   <tr>                                
       <td>&nbsp;</td>		
