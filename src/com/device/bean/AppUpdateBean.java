@@ -107,6 +107,12 @@ public class AppUpdateBean {
 	@Column(name="ios")
 	private Long ios;
     	
+	
+	/**
+	 * app下项目标示
+	*/
+	@Column(name="project")
+	private String project;
     /** 
      * 
      * @return 
@@ -362,4 +368,14 @@ public class AppUpdateBean {
     public void setIos(Long ios) {
     	this.ios = ios;
     }
+
+	public String getProject() {
+		return project;
+	}
+
+	public void setProject(String project) {
+		this.project = project;
+	}
+    
+    
 }

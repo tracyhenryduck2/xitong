@@ -79,6 +79,9 @@ String path = request.getContextPath();
 			    },                              
 			    "appUpdateBean.ios":{            
 			        number:true,range:[0,9999999999]
+			    },                              
+			    "appUpdateBean.project":{            
+			        CNRangeLength:[0,300]
 			    }                              
 			},                                  
 			messages:{                          
@@ -224,7 +227,17 @@ ${appUpdateBean.cs}
         </td>                            
     	<td align="right" width="20%">&nbsp;</td> 
     	<td></td>                        
-  </tr>                                
+  </tr>
+    <tr>                                    
+    	<td align="right"  > 
+                            项目标示<span class="mark"></span>   
+        </td>                            
+        <td>                             
+            <input type="text" name="appUpdateBean.project" id="ios"  value="${appUpdateBean.project}" class="GF-field"/>   
+        </td>                            
+    	<td align="right" width="20%">&nbsp;</td> 
+    	<td></td>                        
+  </tr>                                 
   <tr>                                
       <td>&nbsp;</td>		
       <td colspan="3"><input type="button" name="保存" value="保存" onclick="save();" class="GF-btn"/></td>		

@@ -23,7 +23,8 @@ String path = request.getContextPath();
 			Dialog.opener().document.getElementById("it").value = $("#it").val()||"";    
 			Dialog.opener().document.getElementById("cs").value = $("#cs").val()||"";    
 			Dialog.opener().document.getElementById("urlEx").value = $("#urlEx").val()||"";    
-			Dialog.opener().document.getElementById("ios").value = $("#ios").val()||"";    
+			Dialog.opener().document.getElementById("ios").value = $("#ios").val()||"";  
+			Dialog.opener().document.getElementById("project").value = $("#project").val()||""; 
 			Dialog.opener().document.form1.submit();                     
 			ownerDialog.close();
 	}                                       

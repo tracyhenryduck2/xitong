@@ -89,6 +89,10 @@ public class AppUpdateDAO extends BaseDAO {
     			objectList.add(appupdateBean.getIos());
     			sqlWhere += " AND a.ios = ? ";
     		} 
+    		if(appupdateBean.getProject() != null) { 
+    			objectList.add(appupdateBean.getProject());
+    			sqlWhere += " AND a.project = ? ";
+    		}
     	}                 
     	sql = sql + sqlWhere; 
     	Object[] pram = objectList.toArray(); 

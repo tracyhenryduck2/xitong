@@ -35,14 +35,39 @@ public class SiterAction extends BaseActionSupport{
     private SiterAppDao siterAppdao = new SiterAppDao();
     private ClientTokenDAO clienttokendao = new ClientTokenDAO();
 	
-    
+    //familywell_android
     public void getAppUpdate() {
-		Map<String,Object> loginInfo=siterAppdao.getAppUpdate();
+		Map<String,Object> loginInfo=siterAppdao.getAppUpdate("com.siterwell.familywell");
 		outPrintJSONObject(loginInfo);
     }
     
+    //familywell_ios
     public void getAppUpdateIos() {
-		Map<String,Object> loginInfo=siterAppdao.getAppUpdateIos();
+		Map<String,Object> loginInfo=siterAppdao.getAppUpdateIos("com.siterwell.familywell");
+		outPrintJSONObject(loginInfo);
+    }
+    
+    //lifexbox_android
+    public void getAppUpdateLife() {
+		Map<String,Object> loginInfo=siterAppdao.getAppUpdate("com.siterwell.lifebox");
+		outPrintJSONObject(loginInfo);
+    }
+    
+    //lifebox_ios
+    public void getAppUpdateIosLife() {
+		Map<String,Object> loginInfo=siterAppdao.getAppUpdateIos("com.siterwell.lifebox");
+		outPrintJSONObject(loginInfo);
+    }
+    
+    //bestwell_android
+    public void getAppUpdateBest() {
+		Map<String,Object> loginInfo=siterAppdao.getAppUpdate("com.siterwell.iwell");
+		outPrintJSONObject(loginInfo);
+    }
+    
+    //bestwell_ios
+    public void getAppUpdateIosBest() {
+		Map<String,Object> loginInfo=siterAppdao.getAppUpdateIos("com.siterwell.iwell");
 		outPrintJSONObject(loginInfo);
     }
 	

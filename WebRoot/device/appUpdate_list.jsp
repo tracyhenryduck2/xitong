@@ -108,6 +108,7 @@ String path = request.getContextPath();
 			<input type="hidden" name="appUpdateBean.cs" id="cs" value="${appUpdateBean.cs}"/> 
 			<input type="hidden" name="appUpdateBean.urlEx" id="urlEx" value="${appUpdateBean.urlEx}"/> 
 			<input type="hidden" name="appUpdateBean.ios" id="ios" value="${appUpdateBean.ios}"/> 
+						<input type="hidden" name="appUpdateBean.project" id="ios" value="${appUpdateBean.project}"/> 
 		   	<input type="hidden" name="sortname" value="${page.sortname}"/>    
 		   	<input type="hidden" name="sortorder"  value="${page.sortorder }"/>
 		   	<input type="hidden" name="pageSize" value="${page.pageSize}"/>    
@@ -130,7 +131,8 @@ String path = request.getContextPath();
 			   			<th sortname="it" width="10%">意大利语说明</th>	   
 			   			<th sortname="cs" width="10%">捷克语说明</th>	   
 			   			<th sortname="url_ex" width="10%">app下载的路径国外</th>	   
-			   			<th sortname="ios" width="10%">是否是ios</th>	   
+			   			<th sortname="ios" width="10%">是否是ios</th>	  
+			   			<th sortname="ios" width="10%">项目标示</th>	  
 			   		</tr> 
 			   	</thead>
 			   	<tbody> 
@@ -151,7 +153,8 @@ String path = request.getContextPath();
 		   			 	 <td>${map.it}</td>    
 		   			 	 <td>${map.cs}</td>    
 		   			 	 <td>${map.url_ex}</td>    
-		   			 	 <td>${map.ios}</td>    
+		   			 	 <td>${map.ios}</td> 
+		   			 	 <td>${map.project}</td>    
 		   			 </tr>
 		   			 </s:iterator> 	    
 		   		</tbody>		    		  
