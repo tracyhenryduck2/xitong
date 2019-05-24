@@ -37,6 +37,10 @@ public class InstructionsDAO extends BaseDAO {
     			objectList.add(instructionsBean.getFileUrl());
     			sqlWhere += " AND a.file_url = ? ";
     		} 
+    		if(instructionsBean.getFileUrlEn() != null && instructionsBean.getFileUrlEn().trim().length()>0) { 
+    			objectList.add(instructionsBean.getFileUrlEn());
+    			sqlWhere += " AND a.file_url_en = ? ";
+    		}
     	}                 
     	sql = sql + sqlWhere; 
     	Object[] pram = objectList.toArray(); 

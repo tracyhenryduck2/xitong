@@ -60,7 +60,8 @@ String path = request.getContextPath();
 		function search() {  
 			Dialog.open({Title:"查询", Width:650, Height:220, URL:"<%=path%>/device/Instructions!search.action",OnLoad:function(){
 			     this.innerDoc.getElementById("name").value = $("#name").val();
-			     this.innerDoc.getElementById("file").value = $("#file").val();
+			     this.innerDoc.getElementById("fileUrl").value = $("#fileUrl").val();
+			     this.innerDoc.getElementById("fileUrlEn").value = $("#fileUrlEn").val();
            }
 			});    
 		}      
@@ -81,7 +82,8 @@ String path = request.getContextPath();
     <form action="<%=path%>/device/Instructions!list.action" name="form1" id="form1" method="get">  
    
 			<input type="hidden" name="instructionsBean.name" id="name" value="${instructionsBean.name}"/> 
-			<input type="hidden" name="instructionsBean.fileUrl" id="fileUrl" value="${instructionsBean.fileUrl}"/> 
+			<input type="hidden" name="instructionsBean.fileUrl" id="fileUrl" value="${instructionsBean.fileUrl}"/>
+			<input type="hidden" name="instructionsBean.fileUrlEn" id="fileUrlEn" value="${instructionsBean.fileUrlEn}"/>  
 		   	<input type="hidden" name="sortname" value="${page.sortname}"/>    
 		   	<input type="hidden" name="sortorder"  value="${page.sortorder }"/>
 		   	<input type="hidden" name="pageSize" value="${page.pageSize}"/>    
@@ -91,7 +93,8 @@ String path = request.getContextPath();
 			   		<tr>  
 			   			<th width="2%"><span><input type="checkbox" onClick="checkAll(this,'idArr')"  width="20"/></span></th>     
 			   			<th sortname="name" width="10%">产品名称</th>	   
-			   			<th sortname="fileUrl" width="10%">文件名</th>	   
+			   			<th sortname="fileUrl" width="10%">文件名</th>
+			   			<th sortname="fileUrlEn" width="10%">文件名(英文)</th>	   
 			   		</tr> 
 			   	</thead>
 			   	<tbody> 
@@ -99,7 +102,8 @@ String path = request.getContextPath();
 		   			 <tr> 
 		   			 	 <td align="left"><input type="checkbox" name="idArr"  value="${map.id}"/></td> 
 		   			 	 <td>${map.name}</td>    
-		   			 	 <td>${map.file_url}</td>    
+		   			 	 <td>${map.file_url}</td>
+		   			 	 <td>${map.file_url_en}</td>     
 		   			 </tr>
 		   			 </s:iterator> 	    
 		   		</tbody>		    		  

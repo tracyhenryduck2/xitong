@@ -39,7 +39,10 @@ String path = request.getContextPath();
 			    },                              
 			    "instructionsBean.fileUrl":{            
 			        CNRangeLength:[0,100]
-			    }                              
+			    } ,                              
+			    "instructionsBean.fileUrlEn":{            
+			        CNRangeLength:[0,100]
+			    }                                
 			},                                  
 			messages:{                          
 //			    "instructionsBean.code":{          
@@ -73,9 +76,31 @@ String path = request.getContextPath();
 									
 						    },
 						    'onSWFReady': function() {
-						    	if($("#baikeId").val()==""){
-									$('#fileUrl').uploadify('disable',true);
+						    	
+							}
+						});
+
+						var up2 = $('#uploadEn').Huploadify({
+						auto:true,
+						fileTypeExts:'*.*',
+						multi:true,
+						fileSizeLimit:99999999999,
+						showUploadedPercent:true,
+						showUploadedSize:true,
+						removeTimeout:9999999,
+						uploader : '<%=request.getContextPath()%>/device/Instructions!importFile.action',
+						onUploadSuccess : function(file, data, response) {
+							if(data!=null){
+								$("#msgEn").html(data);
 								}
+									$("#fileUrlEn").val(data);
+									Dialog.alert("上传成功！");
+									$("#_delEn").hide();
+									$("#_del1En").show();
+									
+						    },
+						    'onSWFReady': function() {
+						    	
 							}
 						});
 		},10);
@@ -110,14 +135,44 @@ function removeFile1() {
 }, function() {
 	//否      
 });                                        
-}		                                        
+}	
+
+function removeFile2() {
+	 	Dialog.confirm("确定删除附件吗？", function(){     
+		$.ajax({
+		 type :"post",
+		 url : '<%=request.getContextPath()%>/device/Instructions!removeFile.action',
+				data : {
+					"fileName" : $("#fileUrlEn").val()
+				},
+				success : function(data) {
+                         $("#fileUrlEn").val("");
+
+						if(data)
+						{
+							
+							Dialog.alert("删除成功！");
+							$("#_del1En").hide();
+							$("#_delEn").show();
+						}
+						else
+						{
+							Dialog.alert("删除失败！");
+						}
+				}
+			});
+}, function() {
+	//否      
+});                                        
+}	                                        
 </script>                                
 </head>                                  
 <body>                                   
 <form name="form1" id="form1" action="<%=path %>/device/Instructions!addInstructions.action" method="post" target="fram" >   
 <input type="hidden" name="oper" value="${oper}" />
 <input type="hidden" name="instructionsBean.id" id="id" value="${instructionsBean.id }"/>
-<input type="hidden" name="instructionsBean.fileUrl" id="fileUrl" value="${instructionsBean.fileUrl }"/>    
+<input type="hidden" name="instructionsBean.fileUrl" id="fileUrl" value="${instructionsBean.fileUrl }"/>
+<input type="hidden" name="instructionsBean.fileUrlEn" id="fileUrlEn" value="${instructionsBean.fileUrlEn }"/>      
 <table cellpadding="0" cellspacing="0" width="100%" class="GF-grid"> 
   <tr>                                    
     	<td align="right" width="30%" > 
@@ -162,6 +217,46 @@ function removeFile1() {
 						<td id="_del1" style="display: none">
 							<span id="msg"></span>
 							<input type="button" value="删除" onclick="removeFile1()"
+								class="GF-btn" />
+						</td>
+					</s:else>                         
+  </tr>
+
+
+  <tr>
+    <td align="right">
+						附件(英文)
+						<span class="mark"></span>
+					</td>
+					<s:if test="#request.oper==1">
+						<s:if test="#request.instructionsBean.fileUrlEn!=''">
+							<td id="_delEn" style="display: none">
+								<div id="uploadEn"></div>
+							</td>
+							<td id="_del1En">
+								<span id="msgEn">${instructionsBean.fileUrlEn}</span>
+								<input type="button" value="删除" onclick="removeFile2()"
+									class="GF-btn" />
+							</td>
+						</s:if>
+						<s:else>
+							<td id="_delEn">
+								<div id="uploadEn"></div>
+							</td>
+							<td id="_del1En" style="display: none">
+								<span id="msgEn"></span>
+								<input type="button" value="删除" onclick="removeFile2()"
+									class="GF-btn" />
+							</td>
+						</s:else>
+					</s:if>
+					<s:else>
+						<td id="_delEn">
+							<div id="uploadEn"></div>
+						</td>
+						<td id="_del1En" style="display: none">
+							<span id="msg"></span>
+							<input type="button" value="删除" onclick="removeFile2()"
 								class="GF-btn" />
 						</td>
 					</s:else>                         

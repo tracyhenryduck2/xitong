@@ -17,14 +17,17 @@ public class DownLoadAction extends BaseActionSupport {
 	 private InstructionsDAO dao = new InstructionsDAO();
 	public void downLoad(){
     	String fileRealName=request.getParameter("fileName");
+    	String type = request.getParameter("type");
     	Map<String,Object> map = dao.getInstructionFile(fileRealName);
     	String filer = (String) map.get("file_url");
+    	String filer_en = (String) map.get("file_url_en"); 
     	try {
-    	response.setContentType("text/plain; charset=utf-8");// 一下两行关键的设置
+    		
+    	response.setContentType("application/octet-stream; charset=utf-8");// 一下两行关键的设置
 		response.setCharacterEncoding("UTF-8");
-		response.addHeader("Content-Disposition", "attachment;filename="+new String(filer.getBytes("gb2312"), "ISO8859-1" ));
+		response.addHeader("Content-Disposition", "attachment;filename="+ java.net.URLEncoder.encode(("zh".equals(type)?filer:filer_en), "UTF-8"));
 			BufferedOutputStream buff = new BufferedOutputStream(response.getOutputStream());
-			FileInputStream fis = new FileInputStream(getUploadPath1()+File.separator+filer);
+			FileInputStream fis = new FileInputStream(getUploadPath1()+File.separator+ ("zh".equals(type)?filer:filer_en));
 			byte[] buffers = new byte[1024];
 			int len = 0;
 			while ((len = fis.read(buffers)) != -1) {

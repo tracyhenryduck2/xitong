@@ -10,7 +10,8 @@ String path = request.getContextPath();
 <script type="text/javascript">        
 	function search(){                          
 			Dialog.opener().document.getElementById("name").value = $("#name").val()||"";    
-			Dialog.opener().document.getElementById("fileUrl").value = $("#fileUrl").val()||"";    
+			Dialog.opener().document.getElementById("fileUrl").value = $("#fileUrl").val()||"";
+			Dialog.opener().document.getElementById("fileUrlEn").value = $("#fileUrlEn").val()||"";     
 			Dialog.opener().document.form1.submit();                     
 			ownerDialog.close();
 	}                                       
@@ -25,7 +26,10 @@ String path = request.getContextPath();
 			    },                              
 			    "instructionsBean.fileUrl":{            
 			        CNRangeLength:[0,100]
-			    }                              
+			    },                              
+			    "instructionsBean.fileUrlEn":{            
+			        CNRangeLength:[0,100]
+			    }                               
 			},                                  
 			messages:{                          
 //			    "instructionsBean.code":{          
@@ -55,7 +59,15 @@ String path = request.getContextPath();
         <td>                             
             <input type="text" name="instructionsBean.fileUrl" id="fileUrl"  value="${instructionsBean.fileUrl}" class="GF-field"/>   
         </td>                            
-  </tr>                                
+  </tr>
+    <tr>                                    
+    	<td align="right" width="30%" > 
+                            文件名(英文名)<span class="mark"></span>   
+        </td>                            
+        <td>                             
+            <input type="text" name="instructionsBean.fileUrlEn" id="fileUrlEn"  value="${instructionsBean.fileUrlEn}" class="GF-field"/>   
+        </td>                            
+  </tr>                                 
   <tr>                                
       <td>&nbsp;</td>		
       <td><input type="button" name="查询" value="查询" onclick="search();" class="GF-btn"/></td>		

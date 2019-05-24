@@ -29,6 +29,12 @@ public class InstructionsBean {
 	@Column(name="file_url")
 	private String fileUrl;
     	
+	
+	/**
+	 * 文件名(英文) 
+	*/
+	@Column(name="file_url_en")
+	private String fileUrlEn;
     /** 
      * 
      * @return 
@@ -76,4 +82,14 @@ public class InstructionsBean {
     public void setFileUrl(String fileUrl) {
     	this.fileUrl = fileUrl;
     }
+
+	public String getFileUrlEn() {
+		return fileUrlEn;
+	}
+
+	public void setFileUrlEn(String fileUrlEn) {
+		this.fileUrlEn = fileUrlEn;
+	}
+    
+    
 }
