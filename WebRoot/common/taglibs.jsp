@@ -9,6 +9,7 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/common.css" />
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/cySearchBox.css" />
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/js/uploadify/uploadify.css" />
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/js/Huploadify-master/Huploadify.css" />
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/datePicker/WdatePicker.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery1.9.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/gdk.js"></script>
@@ -18,6 +19,7 @@
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/cySearchBox.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/uploadify/jquery.uploadify.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/Huploadify-master/jquery.Huploadify.js"></script>
 <style media="print" type="text/css">   
 	.noprint{visibility:hidden;display: none;}  
 </style>  

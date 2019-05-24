@@ -8,5 +8,6 @@
 		extends="struts-default">
 		<action name="SiterAction" 
 			class="com.siter.appaction.SiterAction"></action>
+		<action name="DownLoadFile" class="com.common.DownLoadAction"></action>
 	</package>
 </struts>

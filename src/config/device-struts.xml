@@ -28,6 +28,12 @@
                <result name="list">/device/appUpdate_list.jsp</result>
                <result name="search">/device/appUpdate_search.jsp</result>
            </action>
+           <action name="Instructions" class="com.device.action.InstructionsAction">
+	 		<result name="toAddInstructions">/device/instructions_edit.jsp</result>
+	 		<result name="list">/device/instructions_list.jsp</result>
+	 		<result name="search">/device/instructions_search.jsp</result>
+          </action>
+          	
 	</package>
 		
 </struts>
