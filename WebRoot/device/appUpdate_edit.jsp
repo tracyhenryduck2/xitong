@@ -73,7 +73,19 @@ String path = request.getContextPath();
 			    },                              
 			    "appUpdateBean.cs":{            
 			        CNRangeLength:[0,65535]
-			    },                              
+			    }, 
+			    "appUpdateBean.da":{            
+			        CNRangeLength:[0,65535]
+			    }, 
+			    "appUpdateBean.nb":{            
+			        CNRangeLength:[0,65535]
+			    }, 
+			    "appUpdateBean.sv":{            
+			        CNRangeLength:[0,65535]
+			    }, 
+			    "appUpdateBean.ja":{            
+			        CNRangeLength:[0,65535]
+			    }, 
 			    "appUpdateBean.urlEx":{            
 			        CNRangeLength:[0,300]
 			    },                              
@@ -217,7 +229,48 @@ ${appUpdateBean.cs}
         <td>                             
             <input type="text" name="appUpdateBean.urlEx" id="urlEx"  value="${appUpdateBean.urlEx}" class="GF-field"/>   
         </td>                            
-  </tr>                                
+  </tr>
+  
+    <tr>                                    
+    	<td align="right"  > 
+                            丹麦语说明<span class="mark"></span>   
+        </td>                            
+        <td>                             
+                   <textarea style="height:100px" name="appUpdateBean.da" id="da" class="GF-field">
+${appUpdateBean.da}
+</textarea>    
+        </td>                            
+    	<td align="right"  > 
+                            挪威语说明<span class="mark"></span>   
+        </td>                            
+        <td>                             
+                   <textarea style="height:100px" name="appUpdateBean.nb" id="nb"  class="GF-field">
+${appUpdateBean.nb}
+</textarea>   
+        </td>                            
+  </tr>
+  
+  
+      <tr>                                    
+    	<td align="right"  > 
+                            瑞典语说明<span class="mark"></span>   
+        </td>                            
+        <td>                             
+                   <textarea style="height:100px" name="appUpdateBean.sv" id="sv" class="GF-field">
+${appUpdateBean.sv}
+</textarea>    
+        </td>                            
+    	<td align="right"  > 
+                            日语说明<span class="mark"></span>   
+        </td>                            
+        <td>                             
+                   <textarea style="height:100px" name="appUpdateBean.ja" id="ja"  class="GF-field">
+${appUpdateBean.ja}
+</textarea>   
+        </td>                            
+  </tr>
+  
+                                  
   <tr>                                    
     	<td align="right"  > 
                             是否是ios<span class="mark"></span>   

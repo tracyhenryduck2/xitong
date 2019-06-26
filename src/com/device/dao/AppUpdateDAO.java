@@ -80,6 +80,22 @@ public class AppUpdateDAO extends BaseDAO {
     		if(appupdateBean.getCs() != null && appupdateBean.getCs().trim().length()>0) { 
     			objectList.add(appupdateBean.getCs());
     			sqlWhere += " AND a.cs = ? ";
+    		}
+    		if(appupdateBean.getCs() != null && appupdateBean.getCs().trim().length()>0) { 
+    			objectList.add(appupdateBean.getDa());
+    			sqlWhere += " AND a.da = ? ";
+    		} 
+    		if(appupdateBean.getCs() != null && appupdateBean.getCs().trim().length()>0) { 
+    			objectList.add(appupdateBean.getSv());
+    			sqlWhere += " AND a.sv = ? ";
+    		} 
+    		if(appupdateBean.getCs() != null && appupdateBean.getCs().trim().length()>0) { 
+    			objectList.add(appupdateBean.getNb());
+    			sqlWhere += " AND a.nb = ? ";
+    		} 
+    		if(appupdateBean.getCs() != null && appupdateBean.getCs().trim().length()>0) { 
+    			objectList.add(appupdateBean.getJa());
+    			sqlWhere += " AND a.ja = ? ";
     		} 
     		if(appupdateBean.getUrlEx() != null && appupdateBean.getUrlEx().trim().length()>0) { 
     			objectList.add(appupdateBean.getUrlEx());

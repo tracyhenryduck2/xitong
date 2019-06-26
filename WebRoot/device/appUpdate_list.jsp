@@ -72,6 +72,10 @@ String path = request.getContextPath();
 			     this.innerDoc.getElementById("sl").value = $("#sl").val();
 			     this.innerDoc.getElementById("it").value = $("#it").val();
 			     this.innerDoc.getElementById("cs").value = $("#cs").val();
+			     this.innerDoc.getElementById("da").value = $("#da").val();
+			     this.innerDoc.getElementById("sv").value = $("#sv").val();
+			     this.innerDoc.getElementById("nb").value = $("#nb").val();
+			     this.innerDoc.getElementById("ja").value = $("#ja").val();
 			     this.innerDoc.getElementById("url_ex").value = $("#url_ex").val();
 			     this.innerDoc.getElementById("ios").value = $("#ios").val();
            }
@@ -105,7 +109,11 @@ String path = request.getContextPath();
 			<input type="hidden" name="appUpdateBean.fi" id="fi" value="${appUpdateBean.fi}"/> 
 			<input type="hidden" name="appUpdateBean.sl" id="sl" value="${appUpdateBean.sl}"/> 
 			<input type="hidden" name="appUpdateBean.it" id="it" value="${appUpdateBean.it}"/> 
-			<input type="hidden" name="appUpdateBean.cs" id="cs" value="${appUpdateBean.cs}"/> 
+			<input type="hidden" name="appUpdateBean.cs" id="cs" value="${appUpdateBean.cs}"/>
+			<input type="hidden" name="appUpdateBean.da" id="da" value="${appUpdateBean.da}"/> 
+			<input type="hidden" name="appUpdateBean.sv" id="sv" value="${appUpdateBean.sv}"/> 
+			<input type="hidden" name="appUpdateBean.nb" id="nb" value="${appUpdateBean.nb}"/> 
+			<input type="hidden" name="appUpdateBean.ja" id="ja" value="${appUpdateBean.ja}"/>  
 			<input type="hidden" name="appUpdateBean.urlEx" id="urlEx" value="${appUpdateBean.urlEx}"/> 
 			<input type="hidden" name="appUpdateBean.ios" id="ios" value="${appUpdateBean.ios}"/> 
 						<input type="hidden" name="appUpdateBean.project" id="ios" value="${appUpdateBean.project}"/> 
@@ -129,7 +137,11 @@ String path = request.getContextPath();
 			   			<th sortname="fi" width="10%">芬兰文说明</th>	   
 			   			<th sortname="sl" width="10%">斯洛文尼亚语说明</th>	   
 			   			<th sortname="it" width="10%">意大利语说明</th>	   
-			   			<th sortname="cs" width="10%">捷克语说明</th>	   
+			   			<th sortname="cs" width="10%">捷克语说明</th>
+			   			<th sortname="da" width="10%">丹麦语说明</th>	
+			   			<th sortname="nb" width="10%">挪威语说明</th>	
+			   			<th sortname="sv" width="10%">瑞典语说明</th>	
+			   			<th sortname="ja" width="10%">日语说明</th>		   
 			   			<th sortname="url_ex" width="10%">app下载的路径国外</th>	   
 			   			<th sortname="ios" width="10%">是否是ios</th>	  
 			   			<th sortname="ios" width="10%">项目标示</th>	  
@@ -151,7 +163,11 @@ String path = request.getContextPath();
 		   			 	 <td>${map.fi}</td>    
 		   			 	 <td>${map.sl}</td>    
 		   			 	 <td>${map.it}</td>    
-		   			 	 <td>${map.cs}</td>    
+		   			 	 <td>${map.cs}</td>
+		   			 	 <td>${map.da}</td>  
+		   			 	 <td>${map.nb}</td>  
+		   			 	 <td>${map.sv}</td>  
+		   			 	 <td>${map.ja}</td>      
 		   			 	 <td>${map.url_ex}</td>    
 		   			 	 <td>${map.ios}</td> 
 		   			 	 <td>${map.project}</td>    

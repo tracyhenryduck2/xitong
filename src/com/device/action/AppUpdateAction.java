@@ -49,6 +49,10 @@ public class AppUpdateAction extends BaseActionSupport {
             	appUpdateBean.setSl(appUpdateBean.getSl().trim());
             	appUpdateBean.setFi(appUpdateBean.getFi().trim());
             	appUpdateBean.setCs(appUpdateBean.getCs().trim());
+            	appUpdateBean.setNb(appUpdateBean.getNb().trim());
+            	appUpdateBean.setSv(appUpdateBean.getSv().trim());
+            	appUpdateBean.setDa(appUpdateBean.getDa().trim());
+            	appUpdateBean.setJa(appUpdateBean.getJa().trim());
                 showMessage = "编辑"+tableDesc;  
                 result = dao.update(appUpdateBean); 
             } else { 
@@ -76,7 +80,7 @@ public class AppUpdateAction extends BaseActionSupport {
         String[] param={
             "id","version","code","url","en","zh"
             ,"fr","de","es","nl","fi"
-            ,"sl","it","cs","urlEx","ios","project"
+            ,"sl","it","cs","da","sv","nb","ja","urlEx","ios","project"
         };
         boolean result=dao.update(appUpdateBean,param);
         if (result) { 

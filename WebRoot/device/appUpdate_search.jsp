@@ -21,7 +21,11 @@ String path = request.getContextPath();
 			Dialog.opener().document.getElementById("fi").value = $("#fi").val()||"";    
 			Dialog.opener().document.getElementById("sl").value = $("#sl").val()||"";    
 			Dialog.opener().document.getElementById("it").value = $("#it").val()||"";    
-			Dialog.opener().document.getElementById("cs").value = $("#cs").val()||"";    
+			Dialog.opener().document.getElementById("cs").value = $("#cs").val()||"";
+			Dialog.opener().document.getElementById("da").value = $("#da").val()||"";  
+			Dialog.opener().document.getElementById("nb").value = $("#nb").val()||"";  
+			Dialog.opener().document.getElementById("sv").value = $("#sv").val()||"";  
+			Dialog.opener().document.getElementById("ja").value = $("#ja").val()||"";  
 			Dialog.opener().document.getElementById("urlEx").value = $("#urlEx").val()||"";    
 			Dialog.opener().document.getElementById("ios").value = $("#ios").val()||"";  
 			Dialog.opener().document.getElementById("project").value = $("#project").val()||""; 
@@ -72,7 +76,19 @@ String path = request.getContextPath();
 			    },                              
 			    "appUpdateBean.cs":{            
 			        CNRangeLength:[0,65535]
-			    },                              
+			    },
+			    "appUpdateBean.da":{            
+			        CNRangeLength:[0,65535]
+			    }, 
+			    "appUpdateBean.nb":{            
+			        CNRangeLength:[0,65535]
+			    }, 
+			    "appUpdateBean.sv":{            
+			        CNRangeLength:[0,65535]
+			    }, 
+			    "appUpdateBean.ja":{            
+			        CNRangeLength:[0,65535]
+			    }, 
 			    "appUpdateBean.urlEx":{            
 			        CNRangeLength:[0,300]
 			    },                              
@@ -183,7 +199,36 @@ String path = request.getContextPath();
         </td>                            
         <td>                             
             <input type="text" name="appUpdateBean.cs" id="cs"  value="${appUpdateBean.cs}" class="GF-field"/>   
+        </td>
+        
+            	<td align="right" width="20%" > 
+                            丹麦语说明<span class="mark"></span>   
         </td>                            
+        <td>                             
+            <input type="text" name="appUpdateBean.da" id="da"  value="${appUpdateBean.da}" class="GF-field"/>   
+        </td> 
+        
+            	<td align="right" width="20%" > 
+                            挪威语说明<span class="mark"></span>   
+        </td>                            
+        <td>                             
+            <input type="text" name="appUpdateBean.nb" id="nb"  value="${appUpdateBean.nb}" class="GF-field"/>   
+        </td> 
+        
+            	<td align="right" width="20%" > 
+                            瑞典语说明<span class="mark"></span>   
+        </td>                            
+        <td>                             
+            <input type="text" name="appUpdateBean.sv" id="sv"  value="${appUpdateBean.sv}" class="GF-field"/>   
+        </td> 
+        
+            	<td align="right" width="20%" > 
+                            日语说明<span class="mark"></span>   
+        </td>                            
+        <td>                             
+            <input type="text" name="appUpdateBean.ja" id="ja"  value="${appUpdateBean.ja}" class="GF-field"/>   
+        </td> 
+                                    
     	<td align="right" width="20%" > 
                             app下载的路径国外<span class="mark"></span>   
         </td>                            

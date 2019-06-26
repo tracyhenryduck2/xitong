@@ -113,6 +113,35 @@ public class AppUpdateBean {
 	*/
 	@Column(name="project")
 	private String project;
+	
+	
+	/**
+	 * 挪威语说明 
+	*/
+	@Column(name="nb")
+	private String nb;
+	
+	
+	/**
+	 * 丹麦语说明 
+	*/
+	@Column(name="da")
+	private String da;
+	
+	
+	/**
+	 * 瑞典语说明 
+	*/
+	@Column(name="sv")
+	private String sv;
+	
+	
+	/**
+	 * 日语说明 
+	*/
+	@Column(name="ja")
+	private String ja;
+	
     /** 
      * 
      * @return 
@@ -376,6 +405,40 @@ public class AppUpdateBean {
 	public void setProject(String project) {
 		this.project = project;
 	}
+
+	public String getNb() {
+		return nb;
+	}
+
+	public void setNb(String nb) {
+		this.nb = nb;
+	}
+
+	public String getDa() {
+		return da;
+	}
+
+	public void setDa(String da) {
+		this.da = da;
+	}
+
+	public String getSv() {
+		return sv;
+	}
+
+	public void setSv(String sv) {
+		this.sv = sv;
+	}
+
+	public String getJa() {
+		return ja;
+	}
+
+	public void setJa(String ja) {
+		this.ja = ja;
+	}
     
+	
+	
     
 }
