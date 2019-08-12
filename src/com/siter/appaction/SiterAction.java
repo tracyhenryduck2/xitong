@@ -35,6 +35,13 @@ public class SiterAction extends BaseActionSupport{
     private SiterAppDao siterAppdao = new SiterAppDao();
     private ClientTokenDAO clienttokendao = new ClientTokenDAO();
 	
+    
+    //familyLink_android
+    public void getAppUpdateFamilyLink() {
+		Map<String,Object> loginInfo=siterAppdao.getAppUpdate("com.siterwell.flinter");
+		outPrintJSONObject(loginInfo);
+    }
+    
     //familywell_ios
     public void getAppUpdateIosFamilywellPlus() {
 		Map<String,Object> loginInfo=siterAppdao.getAppUpdateIos("com.siterwell.familywellplus");
